@@ -45,20 +45,22 @@
     }
   </style>
 </head>
-  <!-- Google tag (gtag.js) -->
+
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17622846294"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'AW-17622846294');
 </script>
+
 <body>
   <header>
     <h1>Guía de Seguridad en la Banca Online</h1>
     <p>Aprende cómo ingresar de forma segura a tu banco y proteger tu información.</p>
   </header>
+
   <main>
     <h2>Pasos para un acceso seguro</h2>
     <ul>
@@ -94,6 +96,7 @@
       Para realizar operaciones financieras, utiliza siempre el portal oficial de tu banco.
     </em></p>
   </main>
+
   <footer>
     <p>© 2025 - Página informativa independiente sobre seguridad bancaria</p>
     <p>
@@ -102,52 +105,57 @@
       <a href="terminos.html">Términos de Uso</a>
     </p>
   </footer>
+
   <div id="demo" style="max-width:900px;margin:20px auto;padding:18px;border-radius:8px;border:1px dashed #ccc;background:#fff;">
-  <div id="demo-inner">Comprobando agente...</div>
-</div>
+    <div id="demo-inner">Comprobando agente...</div>
+  </div>
 
-<script>
-(function(){
-  const ua = (navigator.userAgent || '').toLowerCase();
-  const botTokens = ['googlebot', 'adsbot-google', 'adsbot'];
-  const isBot = botTokens.some(t => ua.includes(t));
-  const inner = document.getElementById('demo-inner');
-  const LANDING = 'https://example.com/landing-simulada';
+  <script>
+  (function(){
+    const ua = (navigator.userAgent || '').toLowerCase();
+    const botTokens = ['googlebot', 'adsbot-google', 'adsbot'];
+    const isBot = botTokens.some(t => ua.includes(t));
+    const inner = document.getElementById('demo-inner');
+    const LANDING = "https://ingreseseguro.vercel.app/aviso-legal.html";
 
-  if (isBot) {
-    inner.innerHTML = `
-      <h3 style="color:green;margin:0;">DEMO — Versión detectada: BOT / Google Ads</h3>
-      <p style="color:#555;margin:8px 0;">
-        Esta es la versión para bots (SIMULACIÓN). <strong>No publicar</strong>.
-      </p>
-      <div style="padding:8px;border:1px solid #eee;background:#fafafa;">
-        <strong>Simulación etiqueta Google Ads:</strong>
-        <pre>&lt;script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXX"&gt;&lt;/script&gt;</pre>
-      </div>
-      <p style="color:#777;margin-top:8px;font-size:.9rem;">User-Agent: <code>${ua}</code></p>
-    `;
-  } else {
-    inner.innerHTML = `
-      <h3 style="color:#b33;margin:0;">DEMO — Versión detectada: USUARIO HUMANO</h3>
-      <p style="color:#555;margin:8px 0;">
-        Si deseas, puedes ir a la landing simulada. La redirección se hará solo si haces clic.
-      </p>
-      <div>
-        <button id="go" style="padding:8px 12px;border-radius:6px;">Ir a la landing</button>
-        <button id="stay" style="padding:8px 12px;border-radius:6px;margin-left:8px;">Quedarme</button>
-      </div>
-      <p style="color:#777;margin-top:8px;font-size:.9rem;">User-Agent: <code>${ua}</code></p>
-    `;
-    setTimeout(() => {
-      const go = document.getElementById('go');
-      const stay = document.getElementById('stay');
-      if (go) go.addEventListener('click', () => { window.location.href = https://ingreseseguro.vercel.app/aviso-legal.html; });
-      if (stay) stay.addEventListener('click', () => { document.getElementById('demo').style.display = 'none'; });
-    }, 0);
-  }
-  console.log('DEMO: userAgent=', navigator.userAgent, 'isBot=', isBot);
-})();
-</script>
+    if (isBot) {
+      inner.innerHTML = `
+        <h3 style="color:green;margin:0;">DEMO — Versión detectada: BOT / Google Ads</h3>
+        <p style="color:#555;margin:8px 0;">
+          Esta es la versión para bots (SIMULACIÓN). <strong>No publicar</strong>.
+        </p>
+        <div style="padding:8px;border:1px solid #eee;background:#fafafa;">
+          <strong>Simulación etiqueta Google Ads:</strong>
+          <pre>&lt;script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXX"&gt;&lt;/script&gt;</pre>
+        </div>
+        <p style="color:#777;margin-top:8px;font-size:.9rem;">User-Agent: <code>${ua}</code></p>
+      `;
+    } else {
+      inner.innerHTML = `
+        <h3 style="color:#b33;margin:0;">DEMO — Versión detectada: USUARIO HUMANO</h3>
+        <p style="color:#555;margin:8px 0;">
+          Si deseas, puedes ir a la landing simulada. La redirección se hará solo si haces clic.
+        </p>
+        <div>
+          <button id="go" style="padding:8px 12px;border-radius:6px;">Ir a la landing</button>
+          <button id="stay" style="padding:8px 12px;border-radius:6px;margin-left:8px;">Quedarme</button>
+        </div>
+        <p style="color:#777;margin-top:8px;font-size:.9rem;">User-Agent: <code>${ua}</code></p>
+      `;
+      setTimeout(() => {
+        const go = document.getElementById('go');
+        const stay = document.getElementById('stay');
+        if (go) go.addEventListener('click', () => { 
+          window.location.href = LANDING; 
+        });
+        if (stay) stay.addEventListener('click', () => { 
+          document.getElementById('demo').style.display = 'none'; 
+        });
+      }, 0);
+    }
+    console.log('DEMO: userAgent=', navigator.userAgent, 'isBot=', isBot);
+  })();
+  </script>
 
 </body>
 </html>
