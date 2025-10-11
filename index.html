@@ -3,122 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guía de Seguridad en la Banca Online</title>
-  <meta name="description" content="Consejos prácticos para ingresar de forma segura a la banca en línea. Aprende cómo proteger tu información y evitar fraudes digitales.">
+  <title>Vuelos Futuristas ✈ Promociones Nacionales</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f8f9fa;
+    /* ---------- RESET Y BASE ---------- */
+    * {
       margin: 0;
-      color: #333;
-      line-height: 1.6;
+      padding: 0;
+      box-sizing: border-box;
     }
-    header {
-      background: #004aad;
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #0a0a0a, #000000 70%);
       color: #fff;
-      padding: 30px 15px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* ---------- FONDO ANIMADO DE AVIÓN ---------- */
+    .fondo-avion {
+      position: absolute;
+      top: 50%;
+      left: -150px;
+      width: 150px;
+      opacity: 0.12;
+      animation: volar 18s linear infinite;
+    }
+
+    @keyframes volar {
+      from { transform: translateX(0) translateY(-50%); }
+      to { transform: translateX(130vw) translateY(-50%); }
+    }
+
+    /* ---------- CONTENEDOR PRINCIPAL ---------- */
+    .contenedor {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(14px);
+      padding: 45px 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 200, 255, 0.2);
       text-align: center;
+      width: 90%;
+      max-width: 400px;
+      position: relative;
+      z-index: 2;
     }
-    header h1 { margin: 0; font-size: 1.8rem; }
-    main {
-      max-width: 900px;
-      margin: 20px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+
+    .contenedor h2 {
+      font-size: 1.6rem;
+      color: #00eaff;
+      text-shadow: 0 0 12px #00eaff;
+      margin-bottom: 10px;
     }
-    h2 { color: #004aad; margin-top: 25px; }
-    ul { margin-left: 20px; }
+
+    .contenedor p {
+      color: #ccc;
+      font-size: 1rem;
+      margin-bottom: 25px;
+    }
+
+    /* ---------- BOTONES ---------- */
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .botones.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .boton {
+      flex: 1;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(135deg, #00aaff, #0055ff);
+      box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .boton:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+    }
+
+    /* ---------- FOOTER ---------- */
     footer {
-      background: #222;
-      color: #bbb;
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
       text-align: center;
-      padding: 20px;
+      color: #888;
       font-size: 0.9rem;
-      margin-top: 30px;
+      letter-spacing: 0.5px;
     }
-    footer a {
-      color: #bbb;
-      text-decoration: underline;
-      margin: 0 5px;
+
+    footer span {
+      color: #00ffff;
+      text-shadow: 0 0 5px #00ffff;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 600px) {
+      .contenedor {
+        padding: 30px 20px;
+      }
+      .boton {
+        font-size: 15px;
+        padding: 10px 14px;
+      }
+      .fondo-avion {
+        width: 100px;
+        animation-duration: 20s;
+      }
     }
   </style>
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17622846294"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-17622846294');
-</script>
-
 <body>
-  <header>
-    <h1>Guía de Seguridad en la Banca Online</h1>
-    <p>Aprende cómo ingresar de forma segura a tu banco y proteger tu información.</p>
-  </header>
 
-  <main>
-    <h2>Pasos para un acceso seguro</h2>
-    <ul>
-      <li>Verifica siempre que la página tenga <strong>https://</strong> y un candado 🔒 en el navegador.</li>
-      <li>Escribe la dirección de tu banco directamente en el navegador.</li>
-      <li>Usa contraseñas seguras y cámbialas regularmente.</li>
-      <li>No compartas tus claves con nadie, ni siquiera con supuestos empleados del banco.</li>
-    </ul>
+  <!-- Fondo animado con avión -->
+  <img src="https://cdn-icons-png.flaticon.com/512/69/69906.png" alt="Avión volando" class="fondo-avion">
 
-    <h2>Cómo reconocer el sitio oficial de tu banco</h2>
-    <p>
-      Cada entidad financiera cuenta con un portal oficial. Por ejemplo, los clientes de 
-      <strong>Scotiabank Colpatria</strong> deben ingresar únicamente a través de 
-      <a href="https://www.colpatria.com" target="_blank" rel="noopener noreferrer">www.colpatria.com</a>.
-    </p>
-    <ul>
-      <li>Escribe siempre la dirección oficial de tu banco en la barra de direcciones.</li>
-      <li>No uses buscadores ni enlaces en correos sospechosos.</li>
-      <li>Confirma que aparezca el candado de seguridad en la barra del navegador.</li>
-    </ul>
+  <!-- Contenido principal -->
+  <div class="contenedor">
+    <h2>✈ Vuelos Futuristas Colombia</h2>
+    <p>Promociones nacionales desde <strong>$99.900 COP</strong></p>
 
-    <h2>Recomendaciones adicionales</h2>
-    <ul>
-      <li>Evita ingresar desde redes Wi-Fi públicas.</li>
-      <li>Instala y actualiza un buen antivirus en tus dispositivos.</li>
-      <li>Activa la verificación en dos pasos si tu banco lo permite.</li>
-      <li>Cierra sesión siempre al finalizar tus operaciones.</li>
-    </ul>
+    <div class="botones" id="botones">
+      <a href="#" ">
+        <button class="boton">✈ Cotizar</button>
+      </a>
+      <a href="#" onclick="">
+        <button class="boton">🛒 Reservar</button>
+      </a>
+    </div>
+  </div>
 
-    <h2>Aviso importante</h2>
-    <p><em>
-      Este sitio es únicamente informativo y no pertenece a Scotiabank Colpatria ni a ninguna entidad bancaria.  
-      Para realizar operaciones financieras, utiliza siempre el portal oficial de tu banco.
-    </em></p>
-  </main>
-
+  <!-- Footer -->
   <footer>
-    <p>© 2025 - Página informativa independiente sobre seguridad bancaria</p>
-    <p>
-      <a href="aviso-legal.html">Aviso Legal</a> | 
-      <a href="privacidad.html">Política de Privacidad</a> | 
-      <a href="terminos.html">Términos de Uso</a>
-    </p>
+    © 2025 <span>Vuelos Futuristas</span> | Innovando tus viajes ✈
   </footer>
 
+  <!-- Animación de aparición -->
   <script>
-  (function(){
-    const ua = (navigator.userAgent || '').toLowerCase();
-    const botTokens = ['googlebot', 'adsbot-google', 'adsbot'];
-    const isBot = botTokens.some(t => ua.includes(t));
-    const LANDING = "https://ingreseseguro.vercel.app/aviso-legal.html";
-
-    if (isBot) {
-      console.log("BOT detectado:", ua);
-    } else {
-      window.location.href = LANDING;
-    }
-  })();
+    setTimeout(() => {
+      document.getElementById("botones").classList.add("visible");
+    }, 2200);
   </script>
 
 </body>
