@@ -3,164 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vuelos Futuristas ✈ Promociones Nacionales</title>
+  <title>Futuritas | Promociones Nacionales</title>
   <style>
-    /* ---------- RESET Y BASE ---------- */
-    * {
+    body {
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #000428, #004e92);
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
     }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #0a0a0a, #000000 70%);
-      color: #fff;
-      height: 100vh;
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px 0;
+      position: relative;
+    }
+
+    header h2 {
+      margin: 0;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+      font-weight: 600;
+    }
+
+    .banner {
+      background-image: url('https://i.imgur.com/zZbPz5O.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 350px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
-    }
-
-    /* ---------- FONDO ANIMADO DE AVIÓN ---------- */
-    .fondo-avion {
-      position: absolute;
-      top: 50%;
-      left: -150px;
-      width: 150px;
-      opacity: 0.12;
-      animation: volar 18s linear infinite;
-    }
-
-    @keyframes volar {
-      from { transform: translateX(0) translateY(-50%); }
-      to { transform: translateX(130vw) translateY(-50%); }
-    }
-
-    /* ---------- CONTENEDOR PRINCIPAL ---------- */
-    .contenedor {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(14px);
-      padding: 45px 30px;
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(0, 200, 255, 0.2);
-      text-align: center;
-      width: 90%;
-      max-width: 400px;
       position: relative;
-      z-index: 2;
     }
 
-    .contenedor h2 {
-      font-size: 1.6rem;
-      color: #00eaff;
-      text-shadow: 0 0 12px #00eaff;
-      margin-bottom: 10px;
+    .banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
     }
 
-    .contenedor p {
-      color: #ccc;
-      font-size: 1rem;
-      margin-bottom: 25px;
+    .banner h1 {
+      font-size: 2.3em;
+      position: relative;
+      z-index: 1;
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff;
+      margin: 0 10px;
     }
 
-    /* ---------- BOTONES ---------- */
     .botones {
+      margin-top: 25px;
       display: flex;
       justify-content: center;
       gap: 15px;
-      opacity: 0;
-      transform: translateY(25px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
-    .botones.visible {
-      opacity: 1;
-      transform: translateY(0);
+      flex-wrap: wrap;
+      z-index: 1;
+      position: relative;
     }
 
     .boton {
-      flex: 1;
-      padding: 12px 20px;
+      background: linear-gradient(90deg, #00ffff, #0074D9);
+      color: white;
       border: none;
-      border-radius: 30px;
-      font-size: 16px;
-      font-weight: bold;
+      padding: 12px 32px;
+      font-size: 1.1em;
+      border-radius: 35px;
       cursor: pointer;
-      color: #fff;
-      background: linear-gradient(135deg, #00aaff, #0055ff);
-      box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
-      transition: all 0.3s ease;
+      transition: 0.3s ease;
+      box-shadow: 0 0 12px rgba(0,255,255,0.7);
     }
 
     .boton:hover {
       transform: scale(1.08);
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+      background: linear-gradient(90deg, #0074D9, #00ffff);
+      box-shadow: 0 0 25px rgba(0,255,255,1);
     }
 
-    /* ---------- FOOTER ---------- */
     footer {
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
-      text-align: center;
-      color: #888;
-      font-size: 0.9rem;
-      letter-spacing: 0.5px;
+      background: #001f3f;
+      padding: 20px;
+      margin-top: 40px;
+      color: #ccc;
+      font-size: 0.9em;
     }
 
-    footer span {
-      color: #00ffff;
-      text-shadow: 0 0 5px #00ffff;
-    }
-
-    /* ---------- RESPONSIVE ---------- */
     @media (max-width: 600px) {
-      .contenedor {
-        padding: 30px 20px;
+      .banner h1 {
+        font-size: 1.7em;
       }
       .boton {
-        font-size: 15px;
-        padding: 10px 14px;
-      }
-      .fondo-avion {
-        width: 100px;
-        animation-duration: 20s;
+        width: 80%;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Fondo animado con avión -->
-  <img src="https://cdn-icons-png.flaticon.com/512/69/69906.png" alt="Avión volando" class="fondo-avion">
+  <header>
+    <h2>✈ Futuritas | Promociones Nacionales</h2>
+  </header>
 
-  <!-- Contenido principal -->
-  <div class="contenedor">
-    <h2>✈ Vuelos Futuristas Colombia</h2>
-    <p>Promociones nacionales desde <strong>$99.900 COP</strong></p>
-
-    <div class="botones" id="botones">
-       <a href="#" onclick="window.location.href=atob('aHR0cHM6Ly90aXF1dGVzYmFyYXRvLnZlcmNlbC5hcHAv')">
-          <button class="btn">✈ Cotizar</button>
-        </a>
-        <a href="#" onclick="window.location.href=atob('aHR0cHM6Ly90aXF1dGVzYmFyYXRvLnZlcmNlbC5hcHAv')">
+  <section class="banner">
+    <h1>Vuelos Económicos y Futuristas en Colombia 🚀</h1>
+    <div class="botones">
+      <a href="#" onclick="window.location.href=atob('aHR0cHM6Ly90aXF1dGVzYmFyYXRvLnZlcmNlbC5hcHAv')">
+        <button class="boton">✈ Cotizar</button>
+      </a>
+      <a href="#" onclick="window.location.href=atob('aHR0cHM6Ly90aXF1dGVzYmFyYXRvLnZlcmNlbC5hcHAv')">
+        <button class="boton">🛒 Reservar</button>
+      </a>
     </div>
-  </div>
+  </section>
 
-  <!-- Footer -->
   <footer>
-    © 2025 <span>Vuelos Futuristas</span> | Innovando tus viajes ✈
+    © 2025 Futuritas | Promociones Nacionales ✈  
+    <br> Desarrollado para ofrecer los mejores vuelos del país 🌎
   </footer>
-
-  <!-- Animación de aparición -->
-  <script>
-    setTimeout(() => {
-      document.getElementById("botones").classList.add("visible");
-    }, 2200);
-  </script>
 
 </body>
 </html>
