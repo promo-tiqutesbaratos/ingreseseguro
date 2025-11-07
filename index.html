@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sucursal Virtual Personas - Gas</title>
+  <title>Encuesta Sucursal Virtual Personas - Gas</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f4f8; /* fondo neutro claro */
+      background: #f0f4f8;
       text-align: center;
-      padding: 50px 20px;
+      padding: 40px 20px;
       color: #333;
     }
     h1 {
-      color: #1a2e3b; /* azul oscuro */
-      margin-bottom: 15px;
+      color: #1a2e3b;
+      margin-bottom: 20px;
       font-size: 28px;
     }
     .notice {
@@ -28,39 +28,37 @@
     }
     .section {
       margin-bottom: 35px;
+      display: inline-block;
+      text-align: center;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    .tramite-btn {
-      padding: 12px 22px;
+    .section p {
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+    button {
+      padding: 12px 20px;
       margin: 6px;
       border: none;
       border-radius: 8px;
-      background-color: #ff7f50; /* naranja coral */
-      color: white;
       cursor: pointer;
       font-size: 15px;
-      transition: background-color 0.2s;
-    }
-    .tramite-btn:hover {
-      background-color: #e06940; /* naranja más oscuro */
-    }
-    .departamento-btn {
-      padding: 12px 22px;
-      margin: 6px;
-      border: none;
-      border-radius: 8px;
-      background-color: #3498db; /* azul */
       color: white;
-      cursor: pointer;
-      font-size: 15px;
-      transition: background-color 0.2s;
+      transition: all 0.2s;
     }
-    .departamento-btn:hover {
-      background-color: #217dbb; /* azul más oscuro */
-    }
+    .tramite-btn { background-color: #ff7f50; }
+    .tramite-btn:hover { background-color: #e06940; }
+    .departamento-btn { background-color: #3498db; }
+    .departamento-btn:hover { background-color: #217dbb; }
+    .consumo-btn { background-color: #2ecc71; }
+    .consumo-btn:hover { background-color: #27ae60; }
     #mensaje {
       margin-top: 25px;
       font-weight: bold;
-      color: #27ae60; /* verde confirmación */
+      color: #27ae60;
       font-size: 16px;
     }
     footer {
@@ -71,15 +69,15 @@
   </style>
 </head>
 <body>
-  <h1>Sucursal Virtual Personas - Gas</h1>
+  <h1>Encuesta Sucursal Virtual Personas - Gas</h1>
 
   <p class="notice">
-    Esta herramienta es solo informativa.  
-    *No gestionamos pagos ni datos financieros. No representamos a ninguna empresa de gas.*
+    Esta encuesta simula la experiencia de la Sucursal Virtual Personas.  
+    *No se gestionan pagos ni datos financieros.*
   </p>
 
   <div class="section">
-    <p>Selecciona el tipo de trámite o consulta:</p>
+    <p>Selecciona tu tipo de trámite</p>
     <button class="tramite-btn" onclick="seleccionarTramite('Consulta de consumo')">Consulta de consumo</button>
     <button class="tramite-btn" onclick="seleccionarTramite('Cambio de plan')">Cambio de plan</button>
     <button class="tramite-btn" onclick="seleccionarTramite('Reporte de novedad')">Reporte de novedad</button>
@@ -87,7 +85,7 @@
   </div>
 
   <div class="section">
-    <p>Selecciona tu departamento:</p>
+    <p>Selecciona tu departamento</p>
     <button class="departamento-btn" onclick="seleccionarDepartamento('Antioquia')">Antioquia</button>
     <button class="departamento-btn" onclick="seleccionarDepartamento('Cundinamarca')">Cundinamarca</button>
     <button class="departamento-btn" onclick="seleccionarDepartamento('Valle del Cauca')">Valle del Cauca</button>
@@ -95,15 +93,24 @@
     <button class="departamento-btn" onclick="seleccionarDepartamento('Bolívar')">Bolívar</button>
   </div>
 
+  <div class="section">
+    <p>Selecciona tu consumo de gas mensual</p>
+    <button class="consumo-btn" onclick="seleccionarConsumo('<50 m³')"><50 m³</button>
+    <button class="consumo-btn" onclick="seleccionarConsumo('50-100 m³')">50-100 m³</button>
+    <button class="consumo-btn" onclick="seleccionarConsumo('100-200 m³')">100-200 m³</button>
+    <button class="consumo-btn" onclick="seleccionarConsumo('>200 m³')">>200 m³</button>
+  </div>
+
   <div id="mensaje"></div>
 
   <footer>
-    <p>*Sitio informativo independiente. No se gestionan pagos ni datos personales.*</p>
+    <p>*Encuesta informativa. No se recopilan datos personales ni pagos.*</p>
   </footer>
 
   <script>
     let tramiteSeleccionado = '';
     let departamentoSeleccionado = '';
+    let consumoSeleccionado = '';
 
     function seleccionarTramite(tramite) {
       tramiteSeleccionado = tramite;
@@ -115,14 +122,17 @@
       mostrarMensaje();
     }
 
+    function seleccionarConsumo(consumo) {
+      consumoSeleccionado = consumo;
+      mostrarMensaje();
+    }
+
     function mostrarMensaje() {
-      if(tramiteSeleccionado && departamentoSeleccionado){
+      if(tramiteSeleccionado && departamentoSeleccionado && consumoSeleccionado){
         document.getElementById('mensaje').textContent = 
-          `Simulación de "${tramiteSeleccionado}" en ${departamentoSeleccionado}: Gracias por tu respuesta`;
-      } else if(tramiteSeleccionado){
-        document.getElementById('mensaje').textContent = `Trámite seleccionado: ${tramiteSeleccionado}`;
-      } else if(departamentoSeleccionado){
-        document.getElementById('mensaje').textContent = `Departamento seleccionado: ${departamentoSeleccionado}`;
+          `¡Gracias por completar la encuesta! Trámite: ${tramiteSeleccionado}, Departamento: ${departamentoSeleccionado}, Consumo: ${consumoSeleccionado}`;
+      } else {
+        document.getElementById('mensaje').textContent = '';
       }
     }
   </script>
