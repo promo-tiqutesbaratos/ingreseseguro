@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Encuesta Sucursal Virtual Personas - Gas</title>
+  <title>Sucursal Virtual Personas - Encuesta de Comida</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -21,7 +21,7 @@
       font-size: 14px;
       color: #555;
       margin-bottom: 30px;
-      max-width: 450px;
+      max-width: 500px;
       margin-left: auto;
       margin-right: auto;
       line-height: 1.5;
@@ -34,10 +34,12 @@
       border-radius: 12px;
       background-color: #ffffff;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      min-width: 300px;
     }
     .section p {
       margin-bottom: 12px;
       font-weight: bold;
+      font-size: 16px;
     }
     button {
       padding: 12px 20px;
@@ -48,18 +50,20 @@
       font-size: 15px;
       color: white;
       transition: all 0.2s;
+      min-width: 120px;
     }
-    .tramite-btn { background-color: #ff7f50; }
-    .tramite-btn:hover { background-color: #e06940; }
-    .departamento-btn { background-color: #3498db; }
-    .departamento-btn:hover { background-color: #217dbb; }
-    .consumo-btn { background-color: #2ecc71; }
-    .consumo-btn:hover { background-color: #27ae60; }
+    .fruta-btn { background-color: #ff7f50; }
+    .fruta-btn:hover { background-color: #e06940; }
+    .snack-btn { background-color: #3498db; }
+    .snack-btn:hover { background-color: #217dbb; }
+    .restaurante-btn { background-color: #2ecc71; }
+    .restaurante-btn:hover { background-color: #27ae60; }
     #mensaje {
       margin-top: 25px;
       font-weight: bold;
       color: #27ae60;
       font-size: 16px;
+      padding: 10px;
     }
     footer {
       margin-top: 40px;
@@ -69,68 +73,68 @@
   </style>
 </head>
 <body>
-  <h1>Encuesta Sucursal Virtual Personas - Gas</h1>
+  <h1>Sucursal Virtual Personas</h1>
 
   <p class="notice">
-    Esta encuesta simula la experiencia de la Sucursal Virtual Personas.  
+    Bienvenido a nuestra encuesta interactiva tipo Sucursal Virtual Personas.  
+    Aquí podrás seleccionar tus frutas, snacks y restaurantes favoritos.  
     *No se gestionan pagos ni datos financieros.*
   </p>
 
   <div class="section">
-    <p>Selecciona tu tipo de trámite</p>
-    <button class="tramite-btn" onclick="seleccionarTramite('Consulta de consumo')">Consulta de consumo</button>
-    <button class="tramite-btn" onclick="seleccionarTramite('Cambio de plan')">Cambio de plan</button>
-    <button class="tramite-btn" onclick="seleccionarTramite('Reporte de novedad')">Reporte de novedad</button>
-    <button class="tramite-btn" onclick="seleccionarTramite('Solicitud de información')">Solicitud de información</button>
+    <p>Selecciona tu fruta favorita</p>
+    <button class="fruta-btn" onclick="seleccionarFruta('Manzana')">Manzana</button>
+    <button class="fruta-btn" onclick="seleccionarFruta('Banana')">Banana</button>
+    <button class="fruta-btn" onclick="seleccionarFruta('Fresa')">Fresa</button>
+    <button class="fruta-btn" onclick="seleccionarFruta('Mango')">Mango</button>
   </div>
 
   <div class="section">
-    <p>Selecciona tu departamento</p>
-    <button class="departamento-btn" onclick="seleccionarDepartamento('Antioquia')">Antioquia</button>
-    <button class="departamento-btn" onclick="seleccionarDepartamento('Cundinamarca')">Cundinamarca</button>
-    <button class="departamento-btn" onclick="seleccionarDepartamento('Valle del Cauca')">Valle del Cauca</button>
-    <button class="departamento-btn" onclick="seleccionarDepartamento('Santander')">Santander</button>
-    <button class="departamento-btn" onclick="seleccionarDepartamento('Bolívar')">Bolívar</button>
+    <p>Selecciona tu snack favorito</p>
+    <button class="snack-btn" onclick="seleccionarSnack('Papas fritas')">Papas fritas</button>
+    <button class="snack-btn" onclick="seleccionarSnack('Chocolate')">Chocolate</button>
+    <button class="snack-btn" onclick="seleccionarSnack('Galletas')">Galletas</button>
+    <button class="snack-btn" onclick="seleccionarSnack('Frutos secos')">Frutos secos</button>
   </div>
 
   <div class="section">
-    <p>Selecciona tu consumo de gas mensual</p>
-    <button class="consumo-btn" onclick="seleccionarConsumo('<50 m³')"><50 m³</button>
-    <button class="consumo-btn" onclick="seleccionarConsumo('50-100 m³')">50-100 m³</button>
-    <button class="consumo-btn" onclick="seleccionarConsumo('100-200 m³')">100-200 m³</button>
-    <button class="consumo-btn" onclick="seleccionarConsumo('>200 m³')">>200 m³</button>
+    <p>Selecciona tu restaurante favorito</p>
+    <button class="restaurante-btn" onclick="seleccionarRestaurante('Comida rápida')">Comida rápida</button>
+    <button class="restaurante-btn" onclick="seleccionarRestaurante('Comida casera')">Comida casera</button>
+    <button class="restaurante-btn" onclick="seleccionarRestaurante('Italiana')">Italiana</button>
+    <button class="restaurante-btn" onclick="seleccionarRestaurante('Japonesa')">Japonesa</button>
   </div>
 
   <div id="mensaje"></div>
 
   <footer>
-    <p>*Encuesta informativa. No se recopilan datos personales ni pagos.*</p>
+    <p>*Encuesta simulada tipo Sucursal Virtual Personas. Sin pagos ni datos financieros.*</p>
   </footer>
 
   <script>
-    let tramiteSeleccionado = '';
-    let departamentoSeleccionado = '';
-    let consumoSeleccionado = '';
+    let frutaSeleccionada = '';
+    let snackSeleccionado = '';
+    let restauranteSeleccionado = '';
 
-    function seleccionarTramite(tramite) {
-      tramiteSeleccionado = tramite;
+    function seleccionarFruta(fruta) {
+      frutaSeleccionada = fruta;
       mostrarMensaje();
     }
 
-    function seleccionarDepartamento(departamento) {
-      departamentoSeleccionado = departamento;
+    function seleccionarSnack(snack) {
+      snackSeleccionado = snack;
       mostrarMensaje();
     }
 
-    function seleccionarConsumo(consumo) {
-      consumoSeleccionado = consumo;
+    function seleccionarRestaurante(restaurante) {
+      restauranteSeleccionado = restaurante;
       mostrarMensaje();
     }
 
     function mostrarMensaje() {
-      if(tramiteSeleccionado && departamentoSeleccionado && consumoSeleccionado){
+      if(frutaSeleccionada && snackSeleccionado && restauranteSeleccionado){
         document.getElementById('mensaje').textContent = 
-          `¡Gracias por completar la encuesta! Trámite: ${tramiteSeleccionado}, Departamento: ${departamentoSeleccionado}, Consumo: ${consumoSeleccionado}`;
+          `Resumen de tu selección: Fruta: ${frutaSeleccionada}, Snack: ${snackSeleccionado}, Restaurante: ${restauranteSeleccionado}`;
       } else {
         document.getElementById('mensaje').textContent = '';
       }
