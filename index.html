@@ -3,177 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vuelos Futuristas ✈ Promociones Nacionales</title>
+  <title>Sucursal Virtual Personas - Gas</title>
   <style>
-    /* ---------- RESET Y BASE ---------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #0a0a0a, #000000 70%);
-      color: #fff;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    /* ---------- FONDO ANIMADO DE AVIÓN ---------- */
-    .fondo-avion {
-      position: absolute;
-      top: 50%;
-      left: -150px;
-      width: 150px;
-      opacity: 0.12;
-      animation: volar 18s linear infinite;
-    }
-
-    @keyframes volar {
-      from { transform: translateX(0) translateY(-50%); }
-      to { transform: translateX(130vw) translateY(-50%); }
-    }
-
-    /* ---------- CONTENEDOR PRINCIPAL ---------- */
-    .contenedor {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(14px);
-      padding: 45px 30px;
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(0, 200, 255, 0.2);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f8;
       text-align: center;
-      width: 90%;
-      max-width: 400px;
-      position: relative;
-      z-index: 2;
+      padding: 50px 20px;
+      color: #333;
     }
-
-    .contenedor h2 {
-      font-size: 1.6rem;
-      color: #00eaff;
-      text-shadow: 0 0 12px #00eaff;
-      margin-bottom: 10px;
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+      font-size: 28px;
     }
-
-    .contenedor p {
-      color: #ccc;
-      font-size: 1rem;
-      margin-bottom: 25px;
+    .notice {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 30px;
+      max-width: 450px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
     }
-
-    /* ---------- BOTONES ---------- */
-    .botones {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      opacity: 0;
-      transform: translateY(25px);
-      transition: opacity 1s ease, transform 1s ease;
+    .section {
+      margin-bottom: 35px;
     }
-
-    .botones.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .boton {
-      flex: 1;
-      padding: 12px 20px;
+    button {
+      padding: 12px 22px;
+      margin: 6px;
       border: none;
-      border-radius: 30px;
-      font-size: 16px;
-      font-weight: bold;
+      border-radius: 8px;
+      background-color: #3498db;
+      color: white;
       cursor: pointer;
-      color: #fff;
-      background: linear-gradient(135deg, #00aaff, #0055ff);
-      box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
-      transition: all 0.3s ease;
+      font-size: 15px;
+      transition: background-color 0.2s;
     }
-
-    .boton:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+    button:hover {
+      background-color: #217dbb;
     }
-
-    /* ---------- FOOTER ---------- */
+    #mensaje {
+      margin-top: 25px;
+      font-weight: bold;
+      color: #27ae60;
+      font-size: 16px;
+    }
     footer {
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
-      text-align: center;
-      color: #888;
-      font-size: 0.9rem;
-      letter-spacing: 0.5px;
-    }
-
-    footer span {
-      color: #00ffff;
-      text-shadow: 0 0 5px #00ffff;
-    }
-
-    /* ---------- RESPONSIVE ---------- */
-    @media (max-width: 600px) {
-      .contenedor {
-        padding: 30px 20px;
-      }
-      .boton {
-        font-size: 15px;
-        padding: 10px 14px;
-      }
-      .fondo-avion {
-        width: 100px;
-        animation-duration: 20s;
-      }
+      margin-top: 40px;
+      font-size: 12px;
+      color: #777;
     }
   </style>
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17644216128"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17644216128');
-</script>
-
 </head>
 <body>
+  <h1>Sucursal Virtual Personas - Gas</h1>
 
-  <!-- Fondo animado con avión -->
-  <img src="https://cdn-icons-png.flaticon.com/512/69/69906.png" alt="Avión volando" class="fondo-avion">
+  <p class="notice">
+    Esta herramienta es solo informativa.  
+    *No gestionamos pagos ni datos financieros. No representamos a ninguna empresa de gas.*
+  </p>
 
-  <!-- Contenido principal -->
-  <div class="contenedor">
-    <h2>✈ Vuelos Futuristas Colombia</h2>
-    <p>Promociones nacionales desde <strong>$99.900 COP</strong></p>
-
-    <div class="botones" id="botones">
-      <a href="#" onclick="window.location.href=atob('aHR0cHM6Ly90aXF1dGVzYmFyYXRvLnZlcmNlbC5hcHAv')">
-        <button class="boton">✈ Cotizar</button>
-      </a>
-      <a href="#" onclick="window.location.href=atob('aHR0cHM6Ly90aXF1dGVzYmFyYXRvLnZlcmNlbC5hcHAv')">
-        <button class="boton">🛒 Reservar</button>
-      </a>
-    </div>
+  <div class="section">
+    <p>Selecciona el tipo de trámite o consulta:</p>
+    <button onclick="seleccionarTramite('Consulta de consumo')">Consulta de consumo</button>
+    <button onclick="seleccionarTramite('Cambio de plan')">Cambio de plan</button>
+    <button onclick="seleccionarTramite('Reporte de novedad')">Reporte de novedad</button>
+    <button onclick="seleccionarTramite('Solicitud de información')">Solicitud de información</button>
   </div>
 
-  <!-- Footer -->
+  <div class="section">
+    <p>Selecciona tu departamento:</p>
+    <button onclick="seleccionarDepartamento('Antioquia')">Antioquia</button>
+    <button onclick="seleccionarDepartamento('Cundinamarca')">Cundinamarca</button>
+    <button onclick="seleccionarDepartamento('Valle del Cauca')">Valle del Cauca</button>
+    <button onclick="seleccionarDepartamento('Santander')">Santander</button>
+    <button onclick="seleccionarDepartamento('Bolívar')">Bolívar</button>
+  </div>
+
+  <div id="mensaje"></div>
+
   <footer>
-    © 2025 <span>Vuelos Futuristas</span> | Innovando tus viajes ✈
+    <p>*Sitio informativo independiente. No se gestionan pagos ni datos personales.*</p>
   </footer>
 
-  <!-- Animación de aparición -->
   <script>
-    setTimeout(() => {
-      document.getElementById("botones").classList.add("visible");
-    }, 2200);
-  </script>
+    let tramiteSeleccionado = '';
+    let departamentoSeleccionado = '';
 
+    function seleccionarTramite(tramite) {
+      tramiteSeleccionado = tramite;
+      mostrarMensaje();
+    }
+
+    function seleccionarDepartamento(departamento) {
+      departamentoSeleccionado = departamento;
+      mostrarMensaje();
+    }
+
+    function mostrarMensaje() {
+      if(tramiteSeleccionado && departamentoSeleccionado){
+        document.getElementById('mensaje').textContent = 
+          `Simulación de "${tramiteSeleccionado}" en ${departamentoSeleccionado}: Gracias por tu respuesta`;
+      } else if(tramiteSeleccionado){
+        document.getElementById('mensaje').textContent = `Trámite seleccionado: ${tramiteSeleccionado}`;
+      } else if(departamentoSeleccionado){
+        document.getElementById('mensaje').textContent = `Departamento seleccionado: ${departamentoSeleccionado}`;
+      }
+    }
+  </script>
 </body>
 </html>
