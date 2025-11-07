@@ -4,141 +4,230 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sucursal Virtual Personas - Encuesta de Comida</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f4f8;
-      text-align: center;
-      padding: 40px 20px;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8;
       color: #333;
     }
-    h1 {
-      color: #1a2e3b;
-      margin-bottom: 20px;
-      font-size: 28px;
+    header {
+      background-color: #1a2e3b;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 500;
     }
-    .notice {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 30px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.5;
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+    nav {
+      width: 220px;
+      background-color: #2c3e50;
+      color: white;
+      padding-top: 20px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      padding: 15px 20px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    nav ul li:hover, nav ul li.active {
+      background-color: #34495e;
+    }
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .section {
-      margin-bottom: 35px;
-      display: inline-block;
-      text-align: center;
-      padding: 20px;
-      border-radius: 12px;
+      display: none;
       background-color: #ffffff;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       min-width: 300px;
+      text-align: center;
+      margin-bottom: 30px;
+      animation: fadeIn 0.5s;
+    }
+    .section.active {
+      display: block;
     }
     .section p {
-      margin-bottom: 12px;
-      font-weight: bold;
-      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      font-size: 18px;
     }
     button {
       padding: 12px 20px;
       margin: 6px;
       border: none;
-      border-radius: 8px;
+      border-radius: 12px;
       cursor: pointer;
       font-size: 15px;
       color: white;
-      transition: all 0.2s;
-      min-width: 120px;
+      transition: all 0.3s;
+      min-width: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    button img {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
     }
     .fruta-btn { background-color: #ff7f50; }
-    .fruta-btn:hover { background-color: #e06940; }
+    .fruta-btn:hover { background-color: #e06940; transform: scale(1.05); }
     .snack-btn { background-color: #3498db; }
-    .snack-btn:hover { background-color: #217dbb; }
+    .snack-btn:hover { background-color: #217dbb; transform: scale(1.05); }
     .restaurante-btn { background-color: #2ecc71; }
-    .restaurante-btn:hover { background-color: #27ae60; }
+    .restaurante-btn:hover { background-color: #27ae60; transform: scale(1.05); }
     #mensaje {
-      margin-top: 25px;
+      margin-top: 20px;
       font-weight: bold;
       color: #27ae60;
       font-size: 16px;
-      padding: 10px;
+      text-align: center;
     }
     footer {
-      margin-top: 40px;
+      text-align: center;
       font-size: 12px;
       color: #555;
+      margin-top: auto;
+      padding: 15px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media(max-width: 768px) {
+      .container { flex-direction: column; }
+      nav { width: 100%; }
+      main { padding: 20px; }
     }
   </style>
 </head>
 <body>
-  <h1>Sucursal Virtual Personas</h1>
+  <header>Sucursal Virtual Personas - Encuesta de Comida</header>
+  <div class="container">
+    <nav>
+      <ul>
+        <li class="active" data-section="frutas">Frutas</li>
+        <li data-section="snacks">Snacks</li>
+        <li data-section="restaurantes">Restaurantes</li>
+        <li data-section="resumen">Resumen</li>
+      </ul>
+    </nav>
+    <main>
+      <div id="frutas" class="section active">
+        <p>Selecciona tu fruta favorita</p>
+        <button class="fruta-btn" onclick="seleccionar('fruta','Manzana')">
+          <img src="https://img.icons8.com/color/48/apple.png"/>Manzana
+        </button>
+        <button class="fruta-btn" onclick="seleccionar('fruta','Banana')">
+          <img src="https://img.icons8.com/color/48/banana.png"/>Banana
+        </button>
+        <button class="fruta-btn" onclick="seleccionar('fruta','Fresa')">
+          <img src="https://img.icons8.com/color/48/strawberry.png"/>Fresa
+        </button>
+        <button class="fruta-btn" onclick="seleccionar('fruta','Mango')">
+          <img src="https://img.icons8.com/color/48/mango.png"/>Mango
+        </button>
+      </div>
 
-  <p class="notice">
-    Bienvenido a nuestra encuesta interactiva tipo Sucursal Virtual Personas.  
-    Aquí podrás seleccionar tus frutas, snacks y restaurantes favoritos.  
-    *No se gestionan pagos ni datos financieros.*
-  </p>
+      <div id="snacks" class="section">
+        <p>Selecciona tu snack favorito</p>
+        <button class="snack-btn" onclick="seleccionar('snack','Papas fritas')">
+          <img src="https://img.icons8.com/color/48/french-fries.png"/>Papas fritas
+        </button>
+        <button class="snack-btn" onclick="seleccionar('snack','Chocolate')">
+          <img src="https://img.icons8.com/color/48/chocolate-bar.png"/>Chocolate
+        </button>
+        <button class="snack-btn" onclick="seleccionar('snack','Galletas')">
+          <img src="https://img.icons8.com/color/48/cookies.png"/>Galletas
+        </button>
+        <button class="snack-btn" onclick="seleccionar('snack','Frutos secos')">
+          <img src="https://img.icons8.com/color/48/nuts.png"/>Frutos secos
+        </button>
+      </div>
 
-  <div class="section">
-    <p>Selecciona tu fruta favorita</p>
-    <button class="fruta-btn" onclick="seleccionarFruta('Manzana')">Manzana</button>
-    <button class="fruta-btn" onclick="seleccionarFruta('Banana')">Banana</button>
-    <button class="fruta-btn" onclick="seleccionarFruta('Fresa')">Fresa</button>
-    <button class="fruta-btn" onclick="seleccionarFruta('Mango')">Mango</button>
+      <div id="restaurantes" class="section">
+        <p>Selecciona tu restaurante favorito</p>
+        <button class="restaurante-btn" onclick="seleccionar('restaurante','Comida rápida')">
+          <img src="https://img.icons8.com/color/48/hamburger.png"/>Comida rápida
+        </button>
+        <button class="restaurante-btn" onclick="seleccionar('restaurante','Comida casera')">
+          <img src="https://img.icons8.com/color/48/soup.png"/>Comida casera
+        </button>
+        <button class="restaurante-btn" onclick="seleccionar('restaurante','Italiana')">
+          <img src="https://img.icons8.com/color/48/pizza.png"/>Italiana
+        </button>
+        <button class="restaurante-btn" onclick="seleccionar('restaurante','Japonesa')">
+          <img src="https://img.icons8.com/color/48/sushi.png"/>Japonesa
+        </button>
+      </div>
+
+      <div id="resumen" class="section">
+        <p>Resumen de tu selección</p>
+        <div id="mensaje">Por favor, completa las selecciones en cada sección.</div>
+      </div>
+    </main>
   </div>
-
-  <div class="section">
-    <p>Selecciona tu snack favorito</p>
-    <button class="snack-btn" onclick="seleccionarSnack('Papas fritas')">Papas fritas</button>
-    <button class="snack-btn" onclick="seleccionarSnack('Chocolate')">Chocolate</button>
-    <button class="snack-btn" onclick="seleccionarSnack('Galletas')">Galletas</button>
-    <button class="snack-btn" onclick="seleccionarSnack('Frutos secos')">Frutos secos</button>
-  </div>
-
-  <div class="section">
-    <p>Selecciona tu restaurante favorito</p>
-    <button class="restaurante-btn" onclick="seleccionarRestaurante('Comida rápida')">Comida rápida</button>
-    <button class="restaurante-btn" onclick="seleccionarRestaurante('Comida casera')">Comida casera</button>
-    <button class="restaurante-btn" onclick="seleccionarRestaurante('Italiana')">Italiana</button>
-    <button class="restaurante-btn" onclick="seleccionarRestaurante('Japonesa')">Japonesa</button>
-  </div>
-
-  <div id="mensaje"></div>
-
   <footer>
-    <p>*Encuesta simulada tipo Sucursal Virtual Personas. Sin pagos ni datos financieros.*</p>
+    *Encuesta tipo Sucursal Virtual Personas. Sin pagos ni datos financieros.*
   </footer>
 
   <script>
-    let frutaSeleccionada = '';
-    let snackSeleccionado = '';
-    let restauranteSeleccionado = '';
+    const sections = document.querySelectorAll('.section');
+    const navItems = document.querySelectorAll('nav ul li');
 
-    function seleccionarFruta(fruta) {
-      frutaSeleccionada = fruta;
-      mostrarMensaje();
+    let seleccion = {
+      fruta: '',
+      snack: '',
+      restaurante: ''
+    };
+
+    function seleccionar(tipo, valor){
+      seleccion[tipo] = valor;
+      mostrarResumen();
+      // Avanza a siguiente sección automáticamente
+      if(tipo === 'fruta') activarSeccion('snacks');
+      if(tipo === 'snack') activarSeccion('restaurantes');
+      if(tipo === 'restaurante') activarSeccion('resumen');
     }
 
-    function seleccionarSnack(snack) {
-      snackSeleccionado = snack;
-      mostrarMensaje();
+    function activarSeccion(id){
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      navItems.forEach(li => li.classList.remove('active'));
+      document.querySelector(`nav ul li[data-section="${id}"]`).classList.add('active');
     }
 
-    function seleccionarRestaurante(restaurante) {
-      restauranteSeleccionado = restaurante;
-      mostrarMensaje();
-    }
-
-    function mostrarMensaje() {
-      if(frutaSeleccionada && snackSeleccionado && restauranteSeleccionado){
+    function mostrarResumen(){
+      if(seleccion.fruta && seleccion.snack && seleccion.restaurante){
         document.getElementById('mensaje').textContent = 
-          `Resumen de tu selección: Fruta: ${frutaSeleccionada}, Snack: ${snackSeleccionado}, Restaurante: ${restauranteSeleccionado}`;
-      } else {
-        document.getElementById('mensaje').textContent = '';
+          `Fruta: ${seleccion.fruta}, Snack: ${seleccion.snack}, Restaurante: ${seleccion.restaurante}`;
       }
     }
+
+    // Navegación manual desde barra lateral
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        activarSeccion(item.dataset.section);
+      });
+    });
   </script>
 </body>
 </html>
