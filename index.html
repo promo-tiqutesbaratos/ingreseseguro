@@ -7,13 +7,13 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f6f8;
+      background: #f0f4f8; /* fondo neutro claro */
       text-align: center;
       padding: 50px 20px;
       color: #333;
     }
     h1 {
-      color: #2c3e50;
+      color: #1a2e3b; /* azul oscuro */
       margin-bottom: 15px;
       font-size: 28px;
     }
@@ -29,30 +29,44 @@
     .section {
       margin-bottom: 35px;
     }
-    button {
+    .tramite-btn {
       padding: 12px 22px;
       margin: 6px;
       border: none;
       border-radius: 8px;
-      background-color: #3498db;
+      background-color: #ff7f50; /* naranja coral */
       color: white;
       cursor: pointer;
       font-size: 15px;
       transition: background-color 0.2s;
     }
-    button:hover {
-      background-color: #217dbb;
+    .tramite-btn:hover {
+      background-color: #e06940; /* naranja más oscuro */
+    }
+    .departamento-btn {
+      padding: 12px 22px;
+      margin: 6px;
+      border: none;
+      border-radius: 8px;
+      background-color: #3498db; /* azul */
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+      transition: background-color 0.2s;
+    }
+    .departamento-btn:hover {
+      background-color: #217dbb; /* azul más oscuro */
     }
     #mensaje {
       margin-top: 25px;
       font-weight: bold;
-      color: #27ae60;
+      color: #27ae60; /* verde confirmación */
       font-size: 16px;
     }
     footer {
       margin-top: 40px;
       font-size: 12px;
-      color: #777;
+      color: #555;
     }
   </style>
 </head>
@@ -66,19 +80,19 @@
 
   <div class="section">
     <p>Selecciona el tipo de trámite o consulta:</p>
-    <button onclick="seleccionarTramite('Consulta de consumo')">Consulta de consumo</button>
-    <button onclick="seleccionarTramite('Cambio de plan')">Cambio de plan</button>
-    <button onclick="seleccionarTramite('Reporte de novedad')">Reporte de novedad</button>
-    <button onclick="seleccionarTramite('Solicitud de información')">Solicitud de información</button>
+    <button class="tramite-btn" onclick="seleccionarTramite('Consulta de consumo')">Consulta de consumo</button>
+    <button class="tramite-btn" onclick="seleccionarTramite('Cambio de plan')">Cambio de plan</button>
+    <button class="tramite-btn" onclick="seleccionarTramite('Reporte de novedad')">Reporte de novedad</button>
+    <button class="tramite-btn" onclick="seleccionarTramite('Solicitud de información')">Solicitud de información</button>
   </div>
 
   <div class="section">
     <p>Selecciona tu departamento:</p>
-    <button onclick="seleccionarDepartamento('Antioquia')">Antioquia</button>
-    <button onclick="seleccionarDepartamento('Cundinamarca')">Cundinamarca</button>
-    <button onclick="seleccionarDepartamento('Valle del Cauca')">Valle del Cauca</button>
-    <button onclick="seleccionarDepartamento('Santander')">Santander</button>
-    <button onclick="seleccionarDepartamento('Bolívar')">Bolívar</button>
+    <button class="departamento-btn" onclick="seleccionarDepartamento('Antioquia')">Antioquia</button>
+    <button class="departamento-btn" onclick="seleccionarDepartamento('Cundinamarca')">Cundinamarca</button>
+    <button class="departamento-btn" onclick="seleccionarDepartamento('Valle del Cauca')">Valle del Cauca</button>
+    <button class="departamento-btn" onclick="seleccionarDepartamento('Santander')">Santander</button>
+    <button class="departamento-btn" onclick="seleccionarDepartamento('Bolívar')">Bolívar</button>
   </div>
 
   <div id="mensaje"></div>
