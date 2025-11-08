@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sucursal Virtual Personas - Encuesta de Comida</title>
+  <title>Centro Virtual de Encuestas - Preferencias de Comida</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f0f4f8;
+      background-color: #f7f9fc;
       color: #333;
     }
     header {
-      background-color: #1a2e3b;
+      background-color: #3b5998;
       color: white;
       padding: 15px 20px;
       text-align: center;
@@ -27,7 +27,7 @@
     }
     nav {
       width: 220px;
-      background-color: #2c3e50;
+      background-color: #4a6fa5;
       color: white;
       padding-top: 20px;
     }
@@ -41,7 +41,7 @@
       transition: 0.2s;
     }
     nav ul li:hover, nav ul li.active {
-      background-color: #34495e;
+      background-color: #5b83c0;
     }
     main {
       flex: 1;
@@ -118,19 +118,9 @@
       main { padding: 20px; }
     }
   </style>
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17712725578"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17712725578');
-</script>
 </head>
 <body>
-  <header>Sucursal Virtual Personas - Encuesta de Comida</header>
+  <header>Centro Virtual para personas de Encuestas - Preferencias de Comida</header>
   <div class="container">
     <nav>
       <ul>
@@ -196,7 +186,7 @@
     </main>
   </div>
   <footer>
-    *Encuesta tipo Sucursal Virtual Personas. Sin pagos ni datos financieros.*
+    *Esta es una encuesta recreativa sobre preferencias alimenticias. No se recopilan datos personales ni financieros.*
   </footer>
 
   <script>
@@ -212,7 +202,6 @@
     function seleccionar(tipo, valor){
       seleccion[tipo] = valor;
       mostrarResumen();
-      // Avanza a siguiente sección automáticamente
       if(tipo === 'fruta') activarSeccion('snacks');
       if(tipo === 'snack') activarSeccion('restaurantes');
       if(tipo === 'restaurante') activarSeccion('resumen');
@@ -232,7 +221,6 @@
       }
     }
 
-    // Navegación manual desde barra lateral
     navItems.forEach(item => {
       item.addEventListener('click', () => {
         activarSeccion(item.dataset.section);
