@@ -4,52 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADDI - Créditos Digitales</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        :root {
-            --addi-primary: #FF6B6B;
-            --addi-secondary: #FF8E53;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
-            background-color: #f8f9fa;
             font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
         }
         
         /* Header ADDI */
         .header-addi {
-            background: linear-gradient(135deg, var(--addi-primary) 0%, var(--addi-secondary) 100%);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
+            margin-bottom: 50px;
         }
         
         .logo-addi {
-            height: 60px;
+            height: 80px;
+            margin-bottom: 20px;
         }
         
         .header-addi h1 {
-            font-weight: 800;
-            margin: 20px 0 15px 0;
             font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
         }
         
-        .header-addi .lead {
-            font-size: 1.3rem;
+        .header-addi p {
+            font-size: 1.2rem;
             opacity: 0.9;
         }
         
         /* Proceso ADDI */
-        .section-addi {
-            padding: 60px 0;
-            background: white;
-        }
-        
         .process-steps {
             display: flex;
             justify-content: center;
-            gap: 50px;
-            margin: 40px 0;
+            gap: 40px;
+            margin: 50px 0;
             position: relative;
         }
         
@@ -60,7 +62,7 @@
             left: 10%;
             right: 10%;
             height: 3px;
-            background: linear-gradient(135deg, var(--addi-primary) 0%, var(--addi-secondary) 100%);
+            background: rgba(255, 255, 255, 0.3);
             z-index: 1;
         }
         
@@ -69,35 +71,86 @@
             position: relative;
             z-index: 2;
             flex: 1;
-            max-width: 200px;
         }
         
         .step-number {
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--addi-primary) 0%, var(--addi-secondary) 100%);
-            color: white;
+            background: white;
+            color: #2a5298;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 15px;
             font-weight: bold;
             font-size: 1.5rem;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         
         .step-title {
             font-weight: 600;
-            color: #333;
             font-size: 1.1rem;
+        }
+        
+        /* Botones */
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 18px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 180px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-addi {
+            background: white;
+            color: #2a5298;
+        }
+        
+        .btn-nequi {
+            background: #8A2BE2;
+            color: white;
+        }
+        
+        .btn-bancolombia {
+            background: #004884;
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-addi:hover {
+            background: #f0f0f0;
+        }
+        
+        .btn-nequi:hover {
+            background: #7b1fa2;
+        }
+        
+        .btn-bancolombia:hover {
+            background: #003366;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
             .process-steps {
                 flex-direction: column;
-                align-items: center;
                 gap: 30px;
             }
             
@@ -105,46 +158,68 @@
                 display: none;
             }
             
-            .header-addi h1 {
-                font-size: 2rem;
+            .buttons-container {
+                flex-direction: column;
+                align-items: center;
             }
             
-            .header-addi .lead {
-                font-size: 1.1rem;
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .header-addi h1 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header ADDI -->
-    <div class="header-addi">
-        <div class="container">
-            <img src="https://www.addi.com/wp-content/uploads/2021/06/ADDI_Logo_White.png" alt="ADDI" class="logo-addi">
-            <h1 class="mt-3">Créditos Digitales ADDI</h1>
-            <p class="lead">Solicita, aprueba y recibe tu dinero en minutos</p>
-        </div>
-    </div>
-
     <div class="container">
+        <!-- Header ADDI -->
+        <div class="header-addi">
+            <img src="https://www.addi.com/wp-content/uploads/2021/06/ADDI_Logo_White.png" alt="ADDI" class="logo-addi">
+            <h1>Créditos Digitales ADDI</h1>
+            <p>Solicita, aprueba y recibe tu dinero en minutos</p>
+        </div>
+
         <!-- Proceso ADDI -->
-        <div class="section section-addi">
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <div class="step-title">Solicita en línea</div>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <div class="step-title">Aprobación inmediata</div>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <div class="step-title">Dinero en minutos</div>
-                </div>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-title">Solicita en línea</div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-title">Aprobación inmediata</div>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-title">Dinero en minutos</div>
             </div>
         </div>
+
+        <!-- Botones -->
+        <div class="buttons-container">
+            <button class="btn btn-addi">ADDI</button>
+            <button class="btn btn-nequi">Nequi</button>
+            <button class="btn btn-bancolombia">Bancolombia</button>
+        </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Agregar funcionalidad a los botones
+        document.querySelector('.btn-addi').addEventListener('click', function() {
+            alert('Redirigiendo a ADDI');
+        });
+        
+        document.querySelector('.btn-nequi').addEventListener('click', function() {
+            alert('Redirigiendo a Nequi');
+        });
+        
+        document.querySelector('.btn-bancolombia').addEventListener('click', function() {
+            alert('Redirigiendo a Bancolombia');
+        });
+    </script>
 </body>
 </html>
