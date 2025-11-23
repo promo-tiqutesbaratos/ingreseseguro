@@ -19,15 +19,19 @@
         }
         
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 40px 20px;
-            text-align: center;
+            padding: 20px;
         }
         
-        /* Header ADDI */
-        .header-addi {
-            margin-bottom: 50px;
+        /* Banner ADDI */
+        .banner-addi {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
         }
         
         .logo-addi {
@@ -35,18 +39,28 @@
             margin-bottom: 20px;
         }
         
-        .header-addi h1 {
+        .banner-addi h1 {
             font-size: 2.5rem;
             margin-bottom: 15px;
             font-weight: 700;
+            color: #2a5298;
         }
         
-        .header-addi p {
+        .banner-addi p {
             font-size: 1.2rem;
-            opacity: 0.9;
+            color: #666;
+            margin-bottom: 10px;
         }
         
         /* Proceso ADDI */
+        .process-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+        }
+        
         .process-steps {
             display: flex;
             justify-content: center;
@@ -97,27 +111,31 @@
         .buttons-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 60px;
+            gap: 25px;
+            margin-top: 40px;
             flex-wrap: wrap;
         }
         
         .btn {
-            padding: 18px 35px;
+            padding: 20px 40px;
             border: none;
             border-radius: 50px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            min-width: 180px;
+            min-width: 200px;
             text-decoration: none;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         }
         
         .btn-addi {
-            background: white;
-            color: #2a5298;
+            background: #FF6B6B;
+            color: white;
         }
         
         .btn-nequi {
@@ -126,17 +144,17 @@
         }
         
         .btn-bancolombia {
-            background: #004884;
-            color: white;
+            background: #FFD700;
+            color: #000;
         }
         
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
         }
         
         .btn-addi:hover {
-            background: #f0f0f0;
+            background: #ff5252;
         }
         
         .btn-nequi:hover {
@@ -144,7 +162,17 @@
         }
         
         .btn-bancolombia:hover {
-            background: #003366;
+            background: #ffcc00;
+        }
+        
+        .btn-icon {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .btn-bancolombia .btn-icon {
+            filter: brightness(0) invert(0);
         }
         
         /* Responsive */
@@ -168,42 +196,58 @@
                 max-width: 300px;
             }
             
-            .header-addi h1 {
+            .banner-addi h1 {
                 font-size: 2rem;
+            }
+            
+            .banner-addi {
+                padding: 30px 20px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header ADDI -->
-        <div class="header-addi">
-            <img src="https://www.addi.com/wp-content/uploads/2021/06/ADDI_Logo_White.png" alt="ADDI" class="logo-addi">
+        <!-- Banner ADDI -->
+        <div class="banner-addi">
+            <img src="https://www.addi.com/wp-content/uploads/2021/06/ADDI_Logo_White.png" alt="ADDI" class="logo-addi" style="filter: brightness(0) saturate(100%) invert(33%) sepia(90%) saturate(1000%) hue-rotate(200deg) brightness(90%) contrast(90%);">
             <h1>Créditos Digitales ADDI</h1>
             <p>Solicita, aprueba y recibe tu dinero en minutos</p>
+            <p>La forma más rápida y segura de obtener tu crédito</p>
         </div>
 
         <!-- Proceso ADDI -->
-        <div class="process-steps">
-            <div class="process-step">
-                <div class="step-number">1</div>
-                <div class="step-title">Solicita en línea</div>
+        <div class="process-section">
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Solicita en línea</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Aprobación inmediata</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Dinero en minutos</div>
+                </div>
             </div>
-            <div class="process-step">
-                <div class="step-number">2</div>
-                <div class="step-title">Aprobación inmediata</div>
-            </div>
-            <div class="process-step">
-                <div class="step-number">3</div>
-                <div class="step-title">Dinero en minutos</div>
-            </div>
-        </div>
 
-        <!-- Botones -->
-        <div class="buttons-container">
-            <button class="btn btn-addi">ADDI</button>
-            <button class="btn btn-nequi">Nequi</button>
-            <button class="btn btn-bancolombia">Bancolombia</button>
+            <!-- Botones -->
+            <div class="buttons-container">
+                <button class="btn btn-addi">
+                    <img src="https://www.addi.com/wp-content/uploads/2021/06/ADDI_Logo_White.png" alt="ADDI" class="btn-icon" style="height: 20px;">
+                    ADDI
+                </button>
+                <button class="btn btn-nequi">
+                    <img src="https://www.neumacom.co/wp-content/uploads/2020/06/nequi-logo.png" alt="Nequi" class="btn-icon" style="height: 20px;">
+                    Nequi
+                </button>
+                <button class="btn btn-bancolombia">
+                    <img src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/1c0c5f5c-8c3f-4f6a-8f6f-1e7f5f5f5f5f/logo-bancolombia.png" alt="Bancolombia" class="btn-icon" style="height: 20px;">
+                    Bancolombia
+                </button>
+            </div>
         </div>
     </div>
 
