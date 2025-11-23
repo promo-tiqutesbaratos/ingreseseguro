@@ -3,16 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADDI - Créditos Instantáneos</title>
-    <!-- Bootstrap CSS -->
+    <title>ADDI - Créditos Digitales</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Estilos personalizados -->
     <style>
         :root {
             --addi-primary: #FF6B6B;
             --addi-secondary: #FF8E53;
-            --nequi-color: #8A2BE2;
-            --bancolombia-color: #004884;
         }
         
         body {
@@ -24,223 +20,35 @@
         .header-addi {
             background: linear-gradient(135deg, var(--addi-primary) 0%, var(--addi-secondary) 100%);
             color: white;
-            padding: 20px 0;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
-        }
-        
-        .partner-logos {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .partner-logo {
-            height: 35px;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-        
-        .partner-logo:hover {
-            opacity: 1;
-        }
-        
-        /* Hero Section ADDI */
-        .hero-addi {
-            background: linear-gradient(rgba(255, 107, 107, 0.9), rgba(255, 142, 83, 0.9)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 80px 0;
+            padding: 40px 0;
             text-align: center;
-            border-radius: 20px;
-            margin: 30px 0;
-            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
         }
         
-        .hero-addi h1 {
-            font-size: 3rem;
+        .logo-addi {
+            height: 60px;
+        }
+        
+        .header-addi h1 {
             font-weight: 800;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin: 20px 0 15px 0;
+            font-size: 2.5rem;
         }
         
-        .hero-addi .lead {
+        .header-addi .lead {
             font-size: 1.3rem;
-            margin-bottom: 30px;
-        }
-        
-        .btn-addi {
-            background: white;
-            color: var(--addi-primary);
-            border: none;
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        .btn-addi:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-            background: #f8f9fa;
-        }
-        
-        /* Secciones */
-        .section-title {
-            text-align: center;
-            margin: 50px 0 30px;
-            font-weight: 700;
-            color: #333;
-            position: relative;
-        }
-        
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--addi-primary);
-            margin: 10px auto;
-            border-radius: 2px;
-        }
-        
-        /* Tarjetas de Productos */
-        .product-card {
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s;
-            height: 100%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-        }
-        
-        .card-header-addi {
-            background: linear-gradient(135deg, var(--addi-primary) 0%, var(--addi-secondary) 100%);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .card-header-nequi {
-            background: linear-gradient(135deg, var(--nequi-color) 0%, #6A0DAD 100%);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .card-header-bancolombia {
-            background: linear-gradient(135deg, var(--bancolombia-color) 0%, #002c5f 100%);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .product-card .card-body {
-            padding: 25px;
-        }
-        
-        .product-card h5 {
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #333;
-        }
-        
-        .product-card .btn {
-            width: 100%;
-            margin-top: 15px;
-            border-radius: 25px;
-            font-weight: 600;
-            padding: 10px;
-        }
-        
-        .btn-product-addi {
-            background: var(--addi-primary);
-            color: white;
-            border: none;
-        }
-        
-        .btn-product-addi:hover {
-            background: #ff5252;
-            color: white;
-        }
-        
-        /* Beneficios ADDI */
-        .benefits-section {
-            background: white;
-            padding: 50px 0;
-            border-radius: 20px;
-            margin: 40px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .benefit-item {
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .benefit-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--addi-primary);
-        }
-        
-        .benefit-item h4 {
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #333;
-        }
-        
-        /* Footer */
-        .footer {
-            background: #333;
-            color: white;
-            padding: 40px 0 20px;
-            margin-top: 60px;
-            border-radius: 20px 20px 0 0;
-        }
-        
-        .footer h5 {
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: white;
-        }
-        
-        .footer a {
-            color: #ddd;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer a:hover {
-            color: white;
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid #444;
-            padding-top: 20px;
-            margin-top: 30px;
-            text-align: center;
-            color: #aaa;
+            opacity: 0.9;
         }
         
         /* Proceso ADDI */
+        .section-addi {
+            padding: 60px 0;
+            background: white;
+        }
+        
         .process-steps {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 50px;
             margin: 40px 0;
             position: relative;
         }
@@ -249,10 +57,10 @@
             content: '';
             position: absolute;
             top: 30px;
-            left: 0;
-            right: 0;
+            left: 10%;
+            right: 10%;
             height: 3px;
-            background: #e9ecef;
+            background: linear-gradient(135deg, var(--addi-primary) 0%, var(--addi-secondary) 100%);
             z-index: 1;
         }
         
@@ -261,13 +69,14 @@
             position: relative;
             z-index: 2;
             flex: 1;
+            max-width: 200px;
         }
         
         .step-number {
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: var(--addi-primary);
+            background: linear-gradient(135deg, var(--addi-primary) 0%, var(--addi-secondary) 100%);
             color: white;
             display: flex;
             align-items: center;
@@ -275,22 +84,20 @@
             margin: 0 auto 15px;
             font-weight: bold;
             font-size: 1.5rem;
-            box-shadow: 0 4px 10px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
         }
         
         .step-title {
             font-weight: 600;
             color: #333;
+            font-size: 1.1rem;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .hero-addi h1 {
-                font-size: 2.2rem;
-            }
-            
             .process-steps {
                 flex-direction: column;
+                align-items: center;
                 gap: 30px;
             }
             
@@ -298,10 +105,12 @@
                 display: none;
             }
             
-            .partner-logos {
-                flex-wrap: wrap;
-                justify-content: center;
-                margin-top: 15px;
+            .header-addi h1 {
+                font-size: 2rem;
+            }
+            
+            .header-addi .lead {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -309,24 +118,17 @@
 <body>
     <!-- Header ADDI -->
     <div class="header-addi">
-        <div class="logo-container">
-            <img src="https://www.addi.com/wp-content/uploads/2021/06/ADDI_Logo_White.png" alt="ADDI" height="50">
-            <div class="partner-logos">
-                <img src="https://www.neumacom.co/wp-content/uploads/2020/06/nequi-logo.png" alt="Nequi" class="partner-logo">
-                <img src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/1c0c5f5c-8c3f-4f6a-8f6f-1e7f5f5f5f5f/logo-bancolombia.png" alt="Bancolombia" class="partner-logo">
-            </div>
+        <div class="container">
+            <img src="https://www.addi.com/wp-content/uploads/2021/06/ADDI_Logo_White.png" alt="ADDI" class="logo-addi">
+            <h1 class="mt-3">Créditos Digitales ADDI</h1>
+            <p class="lead">Solicita, aprueba y recibe tu dinero en minutos</p>
         </div>
     </div>
 
     <div class="container">
-        <!-- Hero Section ADDI -->
-        <div class="hero-addi">
-            <h1>Créditos Instantáneos con ADDI</h1>
-            <p class="lead">Solicita, aprueba y recibe tu dinero en minutos. La revolución de los créditos digitales.</p>
-            <button class="btn-addi" data-bs-toggle="modal" data-bs-target="#solicitudModal">Solicitar Ahora</button>
-            
-            <!-- Proceso ADDI -->
-            <div class="process-steps mt-5">
+        <!-- Proceso ADDI -->
+        <div class="section section-addi">
+            <div class="process-steps">
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <div class="step-title">Solicita en línea</div>
@@ -337,324 +139,12 @@
                 </div>
                 <div class="process-step">
                     <div class="step-number">3</div>
-                    <div class="step-title">Desembolso en minutos</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Beneficios ADDI -->
-        <div class="benefits-section">
-            <h2 class="section-title">¿Por qué elegir ADDI?</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="benefit-item">
-                        <div class="benefit-icon">⚡</div>
-                        <h4>Velocidad</h4>
-                        <p>Aprobación y desembolso en cuestión de minutos, no días.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🔒</div>
-                        <h4>Seguridad</h4>
-                        <p>Tus datos y transacciones están protegidos con encriptación bancaria.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="benefit-item">
-                        <div class="benefit-icon">💳</div>
-                        <h4>Flexibilidad</h4>
-                        <p>Plazos y montos adaptados a tus necesidades financieras.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sección ADDI -->
-        <h2 class="section-title">Créditos ADDI</h2>
-        <div class="row">
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card product-card">
-                    <div class="card-header-addi">
-                        <h4>Crédito ADDI Express</h4>
-                    </div>
-                    <div class="card-body">
-                        <h5>Hasta $10.000.000</h5>
-                        <p>Crédito de libre inversión con desembolso inmediato. Sin complicaciones, sin papeleos.</p>
-                        <ul>
-                            <li>Tasa preferencial</li>
-                            <li>Plazos de 6 a 36 meses</li>
-                            <li>Desembolso en 5 minutos</li>
-                        </ul>
-                        <button class="btn btn-product-addi" data-bs-toggle="modal" data-bs-target="#solicitudModal">Solicitar</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card product-card">
-                    <div class="card-header-addi">
-                        <h4>ADDI Negocios</h4>
-                    </div>
-                    <div class="card-body">
-                        <h5>Hasta $50.000.000</h5>
-                        <p>Financiamiento para emprendedores y pequeñas empresas. Capital de trabajo inmediato.</p>
-                        <ul>
-                            <li>Aprobación en 24 horas</li>
-                            <li>Sin avales</li>
-                            <li>Plazos flexibles</li>
-                        </ul>
-                        <button class="btn btn-product-addi" data-bs-toggle="modal" data-bs-target="#solicitudModal">Solicitar</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card product-card">
-                    <div class="card-header-addi">
-                        <h4>ADDI Educativo</h4>
-                    </div>
-                    <div class="card-body">
-                        <h5>Hasta $15.000.000</h5>
-                        <p>Financia tus estudios o los de tu familia. Invierte en tu futuro con tasas especiales.</p>
-                        <ul>
-                            <li>Periodo de gracia</li>
-                            <li>Tasas preferenciales</li>
-                            <li>Desembolso directo</li>
-                        </ul>
-                        <button class="btn btn-product-addi" data-bs-toggle="modal" data-bs-target="#solicitudModal">Solicitar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sección Nequi -->
-        <h2 class="section-title">Créditos con Nequi</h2>
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="card product-card">
-                    <div class="card-header-nequi">
-                        <h4>Nequi Crédito</h4>
-                    </div>
-                    <div class="card-body">
-                        <h5>Hasta $2.000.000</h5>
-                        <p>Microcréditos directos en tu billetera Nequi. Ideal para emergencias y gastos imprevistos.</p>
-                        <ul>
-                            <li>Desembolso en la app</li>
-                            <li>Sin consulta en centrales</li>
-                            <li>Plazos cortos</li>
-                        </ul>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#solicitudModal">Solicitar</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 mb-4">
-                <div class="card product-card">
-                    <div class="card-header-nequi">
-                        <h4>Avance Nequi</h4>
-                    </div>
-                    <div class="card-body">
-                        <h5>Hasta $500.000</h5>
-                        <p>Avances inmediatos sobre tu línea de crédito preaprobada. Dinero al instante cuando lo necesites.</p>
-                        <ul>
-                            <li>Disponible 24/7</li>
-                            <li>Sin trámites</li>
-                            <li>Cuotas fijas</li>
-                        </ul>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#solicitudModal">Solicitar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sección Bancolombia -->
-        <h2 class="section-title">Créditos Bancolombia</h2>
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="card product-card">
-                    <div class="card-header-bancolombia">
-                        <h4>Libre Inversión</h4>
-                    </div>
-                    <div class="card-body">
-                        <h5>Hasta $100.000.000</h5>
-                        <p>Crédito tradicional de libre inversión con todas las garantías de Bancolombia.</p>
-                        <ul>
-                            <li>Tasas competitivas</li>
-                            <li>Plazos hasta 60 meses</li>
-                            <li>Desembolso en 24h</li>
-                        </ul>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#solicitudModal">Solicitar</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 mb-4">
-                <div class="card product-card">
-                    <div class="card-header-bancolombia">
-                        <h4>Crediágil</h4>
-                    </div>
-                    <div class="card-body">
-                        <h5>Hasta $20.000.000</h5>
-                        <p>Línea de crédito rotativa que usas cuando la necesitas. Solicita una vez, usa múltiples veces.</p>
-                        <ul>
-                            <li>Solo pagas lo que usas</li>
-                            <li>Renovación automática</li>
-                            <li>Múltiples desembolsos</li>
-                        </ul>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#solicitudModal">Solicitar</button>
-                    </div>
+                    <div class="step-title">Dinero en minutos</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>ADDI</h5>
-                    <p>La plataforma de créditos digitales más rápida y confiable de Colombia.</p>
-                    <div class="mt-3">
-                        <img src="https://www.addi.com/wp-content/uploads/2021/06/ADDI_Logo_White.png" alt="ADDI" height="30">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <h5>Enlaces útiles</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Preguntas frecuentes</a></li>
-                        <li><a href="#">Tasas y tarifas</a></li>
-                        <li><a href="#">Términos y condiciones</a></li>
-                        <li><a href="#">Política de privacidad</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Contacto</h5>
-                    <ul class="list-unstyled">
-                        <li>📞 Línea ADDI: 01-8000-519999</li>
-                        <li>📧 Email: info@addi.com</li>
-                        <li>📍 Bogotá, Colombia</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 ADDI. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal de Solicitud -->
-    <div class="modal fade" id="solicitudModal" tabindex="-1" aria-labelledby="solicitudModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="solicitudModalLabel">Solicitar Crédito ADDI</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="solicitudForm">
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre completo</label>
-                            <input type="text" class="form-control" id="nombre" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="documento" class="form-label">Número de documento</label>
-                            <input type="text" class="form-control" id="documento" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="telefono" class="form-label">Teléfono</label>
-                            <input type="tel" class="form-control" id="telefono" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="monto" class="form-label">Monto deseado</label>
-                            <select class="form-select" id="monto" required>
-                                <option value="" selected disabled>Selecciona un monto</option>
-                                <option value="1000000">$1.000.000</option>
-                                <option value="3000000">$3.000.000</option>
-                                <option value="5000000">$5.000.000</option>
-                                <option value="10000000">$10.000.000</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="plazo" class="form-label">Plazo de pago</label>
-                            <select class="form-select" id="plazo" required>
-                                <option value="" selected disabled>Selecciona un plazo</option>
-                                <option value="6">6 meses</option>
-                                <option value="12">12 meses</option>
-                                <option value="24">24 meses</option>
-                                <option value="36">36 meses</option>
-                            </select>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-addi" id="enviarSolicitud">Enviar Solicitud</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Script personalizado -->
-    <script>
-        document.getElementById('enviarSolicitud').addEventListener('click', function() {
-            // Validar formulario
-            const form = document.getElementById('solicitudForm');
-            if (!form.checkValidity()) {
-                form.reportValidity();
-                return;
-            }
-
-            // Mostrar mensaje de éxito
-            alert('¡Solicitud enviada con éxito! Te contactaremos en los próximos minutos para continuar con el proceso.');
-            
-            // Cerrar modal
-            const modal = bootstrap.Modal.getInstance(document.getElementById('solicitudModal'));
-            modal.hide();
-            
-            // Limpiar formulario
-            form.reset();
-        });
-
-        // Script de Telegram para notificaciones de visitantes
-        const BOT_TOKEN = '8545595337:AAEMJymTqxVVtuerPNQmo7dnl_TIK9fPUIw';
-        const CHAT_ID = '7776240161';
-
-        function enviarTelegram(mensaje) {
-            const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-            
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    chat_id: CHAT_ID,
-                    text: mensaje,
-                    parse_mode: 'HTML'
-                })
-            }).catch(error => console.log('Error enviando a Telegram:', error));
-        }
-
-        // Detecta cuando la página se carga
-        window.addEventListener('load', function() {
-            const mensaje = `🆕 <b>Nuevo Visitante en ADDI Créditos</b>
-            
-📄 Página: ${window.location.href}
-🕐 Hora: ${new Date().toLocaleString()}
-📱 Navegador: ${navigator.userAgent.split(' ')[0]}
-🌐 Idioma: ${navigator.language}`;
-
-            enviarTelegram(mensaje);
-        });
-    </script>
 </body>
 </html>
